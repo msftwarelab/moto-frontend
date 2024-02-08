@@ -26,7 +26,6 @@ import CommonFormComponent from '../../CommonField/CommonFormComponent';
 import ImageUploadComponent from '../ImageUploadComponent/ImageUploadComponent';
 
 import tickIcon from '/public/SiteIcons/adminPlusIcon.svg';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class WhyHostForm extends Component {
 
@@ -97,7 +96,6 @@ class WhyHostForm extends Component {
                   <ControlLabel className={s.labelTextNew}>
                     <FormattedMessage {...messages.tabTitle} />
                   </ControlLabel>
-                  <AdminTranslateButton label={formatMessage(messages.tabTitle)} identifier={`whyhost.document.${document}.title`} />
                   <Field
                     name={`${document}.title`}
                     type="text"
@@ -111,7 +109,6 @@ class WhyHostForm extends Component {
                   <ControlLabel className={s.labelTextNew}>
                     <FormattedMessage {...messages.buttonLabel} />
                   </ControlLabel>
-                  <AdminTranslateButton label={formatMessage(messages.buttonLabel)} identifier={`whyhost.document.${document}.buttonLabel`} />
                   <Field
                     name={`${document}.buttonLabel`}
                     type="text"

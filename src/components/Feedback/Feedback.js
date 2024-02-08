@@ -17,8 +17,6 @@ import cs from '../commonStyle.css';
 import iconOne from '/public/SiteIcons/supportIconOne.svg';
 import iconTwo from '/public/SiteIcons/supportIconTwo.svg';
 import iconThree from '/public/SiteIcons/supportIconThree.svg';
-import Translation from '../Translation/Translation';
-import { identifier } from '@babel/types';
 
 class Feedback extends React.Component {
 
@@ -52,16 +50,8 @@ class Feedback extends React.Component {
                       className={cx(s.feedbackBox, s.borderRight, 'borderRightFeedRTL')}>
                       <img src={iconOne} />
                       <div>
-                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}>
-                          <Translation identifier="footer.title2">
-                            {getFooterSetting.title1}
-                          </Translation>
-                        </label>
-                        <label className={cx(cs.paddingTop2, cs.commonContentText, cs.fontWeightNormal, s.textColor)}>
-                          <Translation identifier="footer.content2">
-                            {getFooterSetting.content1}
-                          </Translation>
-                        </label>
+                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}>{getFooterSetting.title1}</label>
+                        <label className={cx(cs.paddingTop2, cs.commonContentText, cs.fontWeightNormal, s.textColor)}>{getFooterSetting.content1}</label>
                       </div>
                     </Col>
                   }
@@ -72,15 +62,9 @@ class Feedback extends React.Component {
                     >
                       <img src={iconTwo} />
                       <div className={cx(s.feedbackContent, 'textAlignRightRTL')}>
-                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}>
-                          <Translation identifier="footer.title2">
-                            {getFooterSetting.title2}
-                          </Translation>
-                        </label>
+                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}>{getFooterSetting.title2}</label>
                         <label className={cx(cs.paddingTop2, cs.commonContentText, cs.fontWeightNormal)}>
-                          <Translation identifier="footer.content2">
-                            {getFooterSetting.content2}
-                          </Translation>
+                          {getFooterSetting.content2}
                         </label>
                       </div>
                     </Col>
@@ -93,16 +77,8 @@ class Feedback extends React.Component {
                       <img src={iconThree} />
 
                       <div className={cx(s.feedbackContent, 'textAlignRightRTL')}>
-                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}>
-                          <Translation identifier="footer.title2">
-                            {getFooterSetting.title3}
-                          </Translation>
-                        </label>
-                        <label className={cx(cs.paddingTop2, cs.commonContentText, cs.fontWeightNormal)}>
-                          <Translation identifier="footer.content2">
-                            {getFooterSetting.content3}
-                          </Translation>
-                        </label>
+                        <label className={cx(cs.commonSubTitleText, cs.paddingTop4, cs.fontWeightBold)}> {getFooterSetting.title3}</label>
+                        <label className={cx(cs.paddingTop2, cs.commonContentText, cs.fontWeightNormal)}>{getFooterSetting.content3}</label>
                       </div>
                     </Col>
                   }

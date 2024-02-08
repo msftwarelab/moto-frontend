@@ -29,7 +29,6 @@ import {
   ControlLabel
 } from 'react-bootstrap';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 class EditListSettingsForm extends Component {
 
   static propTypes = {
@@ -66,9 +65,10 @@ class EditListSettingsForm extends Component {
     const { error, handleSubmit, submitting, title } = this.props;
     const { formatMessage } = this.props.intl;
     const { id, typeId, deleteListSettings, listSettingsData, carModelListSettingsData } = this.props;
-    const { fieldType } = this.props.listSettingsData;
+    const { fieldType } = this.state;
     let isListingData = listSettingsData && listSettingsData.listSettings;
     let isCarModelDetails = carModelListSettingsData && carModelListSettingsData.listSettings;
+
     return (
       <div className={cx('maxwidthcenter', 'adminRadioBtn')}>
         <h1 className={s.headerTitle}>{title}</h1>
@@ -103,7 +103,6 @@ class EditListSettingsForm extends Component {
           <FormGroup className={s.space3}>
             <ControlLabel className={cp.labelTextNew}>
               <FormattedMessage {...messages.addNew} />
-              {fieldType === "stringType" && <AdminTranslateButton identifier={`settings.${id}`} label={formatMessage(messages.addNew)} />}
             </ControlLabel>
             <Field
               name="itemName"
@@ -117,7 +116,6 @@ class EditListSettingsForm extends Component {
             typeId && (typeId == 1) && <FormGroup className={s.space3}>
               <ControlLabel className={cp.labelTextNew}>
                 <FormattedMessage {...messages.addNewDescription} />
-                {fieldType === "stringType" && <AdminTranslateButton identifier={`settings.description.${id}`} label={formatMessage(messages.addNewDescription)} />}
               </ControlLabel>
               <Field
                 name="itemDescription"

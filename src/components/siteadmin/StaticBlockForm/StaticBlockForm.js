@@ -23,7 +23,6 @@ import Uploader from './Uploader';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../locale/messages';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class StaticBlockForm extends Component {
 
@@ -47,7 +46,6 @@ class StaticBlockForm extends Component {
               <form onSubmit={handleSubmit(submit)}>
                 {error && <strong>{formatMessage(error)}</strong>}
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.adminTitleLabel} /></label>
-                <AdminTranslateButton identifier="staticInfo.carTripTitle1" label={formatMessage(messages.adminTitleLabel)} />
                 <Field
                   name="carTripTitle1"
                   type="text"
@@ -62,8 +60,6 @@ class StaticBlockForm extends Component {
                       <BlockUploader />
                     </div>
                     <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.adminTitleLabel} /></label>
-                    <AdminTranslateButton identifier="staticInfo.carTripTitle2" label={formatMessage(messages.adminTitleLabel)} />
-
                     <Field
                       name="carTripTitle2"
                       type="text"
@@ -71,8 +67,6 @@ class StaticBlockForm extends Component {
                       inputClass={cx(cs.formControlInput, cs.spaceBottom3)}
                     />
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.contentLabel} /></label>
-                    <AdminTranslateButton identifier="staticInfo.carTripContent2" label={formatMessage(messages.contentLabel)} />
-
                     <Field
                       name="carTripContent2"
                       component={CommonFormComponent}
@@ -87,8 +81,6 @@ class StaticBlockForm extends Component {
                       <Uploader />
                     </div>
                     <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.adminTitleLabel} /></label>
-                    <AdminTranslateButton identifier="staticInfo.carTripTitle3" label={formatMessage(messages.adminTitleLabel)} />
-
                     <Field
                       name="carTripTitle3"
                       type="text"
@@ -96,8 +88,6 @@ class StaticBlockForm extends Component {
                       inputClass={cx(cs.formControlInput, cs.spaceBottom3)}
                     />
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.contentLabel} /></label>
-                    <AdminTranslateButton identifier="staticInfo.carTripContent3" label={formatMessage(messages.contentLabel)} />
-
                     <Field
                       name="carTripContent3"
                       component={CommonFormComponent}

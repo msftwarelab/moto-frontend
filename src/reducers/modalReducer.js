@@ -1,32 +1,30 @@
 import {
-  CLOSE_ADMIN_TRANSLATE_MODAL,
-  CLOSE_BOOKING_MODAL,
-  CLOSE_FILTER_MODAL,
-  CLOSE_FORGOT_PASSWORD_MODAL,
-  CLOSE_HEADER_MODAL,
-  CLOSE_LONGIN_MODAL,
-  CLOSE_REPORT_USER_MODAL,
-  CLOSE_SIGNUP_MODAL,
-  CLOSE_SMS_VERIFICATION_MODAL,
-  CLOSE_SOCIAL_SHARE_MODAL,
-  CLOSE_THANK_YOU_MODAL,
-  CLOSE_TRANSACTION_FILTER_MODAL,
-  CLOSE_WISH_LIST_GROUP_MODAL,
-  CLOSE_WISH_LIST_MODAL,
-  OPEN_ADMIN_TRANSLATE_MODAL,
-  OPEN_BOOKING_MODAL,
-  OPEN_FILTER_MODAL,
-  OPEN_FORGOT_PASSWORD_MODAL,
-  OPEN_HEADER_MODAL,
   OPEN_LONGIN_MODAL,
-  OPEN_REPORT_USER_MODAL,
+  CLOSE_LONGIN_MODAL,
   OPEN_SIGNUP_MODAL,
-  OPEN_SMS_VERIFICATION_MODAL,
-  OPEN_SOCIAL_SHARE_MODAL,
-  OPEN_THANK_YOU_MODAL,
-  OPEN_TRANSACTION_FILTER_MODAL,
+  CLOSE_SIGNUP_MODAL,
+  OPEN_FORGOT_PASSWORD_MODAL,
+  CLOSE_FORGOT_PASSWORD_MODAL,
   OPEN_WISH_LIST_GROUP_MODAL,
-  OPEN_WISH_LIST_MODAL
+  CLOSE_WISH_LIST_GROUP_MODAL,
+  OPEN_WISH_LIST_MODAL,
+  CLOSE_WISH_LIST_MODAL,
+  OPEN_REPORT_USER_MODAL,
+  CLOSE_REPORT_USER_MODAL,
+  OPEN_THANK_YOU_MODAL,
+  CLOSE_THANK_YOU_MODAL,
+  OPEN_SMS_VERIFICATION_MODAL,
+  CLOSE_SMS_VERIFICATION_MODAL,
+  OPEN_BOOKING_MODAL,
+  CLOSE_BOOKING_MODAL,
+  OPEN_SOCIAL_SHARE_MODAL,
+  CLOSE_SOCIAL_SHARE_MODAL,
+  OPEN_HEADER_MODAL,
+  CLOSE_HEADER_MODAL,
+  OPEN_FILTER_MODAL,
+  CLOSE_FILTER_MODAL,
+  OPEN_TRANSACTION_FILTER_MODAL,
+  CLOSE_TRANSACTION_FILTER_MODAL
 } from '../constants';
 
 export default function modalStatus(state = {}, action) {
@@ -173,32 +171,17 @@ export default function modalStatus(state = {}, action) {
         filterModal: action.payload.filterModal
       }
 
-    case OPEN_ADMIN_TRANSLATE_MODAL:
-      return {
-        ...state,
-        isAdminTranslateModalOpen: action.payload.isAdminTranslateModalOpen,
-        identifier: action.payload.identifier,
-        label: action.payload.label,
-        type: action.payload.type
-      }
-
-    case CLOSE_ADMIN_TRANSLATE_MODAL:
-      return {
-        ...state,
-        isAdminTranslateModalOpen: action.payload.isAdminTranslateModalOpen
-      }
-
     case CLOSE_FILTER_MODAL:
       return {
         ...state,
         filterModal: action.payload.filterModal
       }
-    case OPEN_TRANSACTION_FILTER_MODAL:
+      case OPEN_TRANSACTION_FILTER_MODAL:
       return {
         ...state,
         transactionFilterModal: action.payload.transactionFilterModal
       }
-    case CLOSE_TRANSACTION_FILTER_MODAL:
+      case CLOSE_TRANSACTION_FILTER_MODAL:
       return {
         ...state,
         transactionFilterModal: action.payload.transactionFilterModal

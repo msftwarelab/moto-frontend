@@ -21,8 +21,8 @@ mutation updateConfigSettings(
                 $googleClientId: String,
                 $googleSecretId: String,
                 $deepLinkContent: String,
-                $fcmPushNotificationKey:String
-
+                $fcmPushNotificationKey:String,
+                $opnPaymentsPublicKey: String,
             ) {
                 updateConfigSettings(
                     deepLinkBundleId: $deepLinkBundleId,
@@ -47,7 +47,8 @@ mutation updateConfigSettings(
                     googleClientId: $googleClientId,
                     googleSecretId: $googleSecretId
                     deepLinkContent: $deepLinkContent 
-                    fcmPushNotificationKey: $fcmPushNotificationKey
+                    fcmPushNotificationKey: $fcmPushNotificationKey,
+                    opnPaymentsPublicKey: $opnPaymentsPublicKey,
                 ){
                     status
                     errorMessage

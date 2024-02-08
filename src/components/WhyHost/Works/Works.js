@@ -8,7 +8,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import cx from 'classnames';
 import s from './Works.css';
 import cs from '../../commonStyle.css';
-import Translation from '../../Translation/Translation';
 class Works extends Component {
   static propTypes = {
     formatMessage: PropTypes.any,
@@ -26,22 +25,22 @@ class Works extends Component {
           </Col>
           <Col xs={12} sm={12} md={6} lg={6}>
             <h3 className={cx(s.heading)}>
-              {data && <Translation identifier="whyBlock5workTitleHeading">{data.workTitleHeading}</Translation>}
+              {data && data.workTitleHeading}
             </h3>
             <div className={cx(s.whyblock)}>
               <h4 className={s.common}>
-                {data && <Translation identifier="whyBlock5peaceTitle1">{data.peaceTitle1}</Translation>}
+                {data && data.peaceTitle1}
               </h4>
               <p className={s.common}>
-                {data && <Translation identifier="whyBlock5peaceContent1">{data.peaceContent1}</Translation>}
+                {data && data.peaceContent1}
               </p>
             </div>
             <div className={cx(s.whyblock, cs.spaceTop6)}>
               <h4 className={s.common}>
-                {data && <Translation identifier="whyBlock5peaceTitle2">{data.peaceTitle2}</Translation>}
+                {data && data.peaceTitle2}
               </h4>
               <p className={s.common}>
-                {data && <Translation identifier="whyBlock5peaceContent2">{data.peaceContent2}</Translation>}
+                {data && data.peaceContent2}
               </p>
             </div>
           </Col>

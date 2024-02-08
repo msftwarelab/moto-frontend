@@ -432,6 +432,12 @@ const ReservationType = new ObjectType({
 
             }
 
+        },
+        paymentMethod: {
+            type: StringType
+        },
+        token: {
+            type: StringType
         }
     }
 });

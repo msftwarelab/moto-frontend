@@ -132,58 +132,58 @@ class ContactForm extends Component {
                 <Row>
                     <Col lg={12} md={12} sm={12} xs={12} className={s.marginTop}>
                         <div>
-                            {(email || phoneNumber || address) && <div className={s.space6}>
-                                <h1 className={s.contactTitle}>
-                                    <FormattedMessage {...messages.contactFormInformation} />
-                                </h1>
-                            </div>}
-                            <Row className={s.dFlex}>
-                                {email && <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
-                                    <div className={s.space6}>
-                                        <div>
-                                            <div className={s.iconMargin}>
-                                                <img src={mailLogo} className={s.mailIcon} />
-                                            </div>
-                                            <div>
-                                                <h1 className={cx(s.contactTitle, s.subTitleText)}>
-                                                    <FormattedMessage {...messages.contactFormEmail} />
-                                                </h1>
-                                                <a href={"mailto:" + email} className={s.linkText} target='_blank'>{email}</a>
-                                            </div>
+                            <Col lg={12} md={12} sm={12} xs={12} className={s.space3}>
+                                <div className={s.space6}>
+                                    <h1 className={s.contactTitle}>
+                                        <FormattedMessage {...messages.contactFormInformation} />
+                                    </h1>
+                                </div>
+                            </Col>
+                            <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
+                                <div className={s.space6}>
+                                    <div>
+                                        <div className={s.iconMargin}>
+                                            <img src={mailLogo} className={s.mailIcon} />
                                         </div>
-                                    </div>
-                                </Col>}
-                                {phoneNumber && <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
-                                    <div className={s.space6}>
                                         <div>
-                                            <div className={s.iconMargin}>
-                                                <img src={caller} className={s.mailIcon} />
-                                            </div>
-                                            <div>
-                                                <h1 className={cx(s.contactTitle, s.subTitleText)}><FormattedMessage {...messages.contactFormCall} /></h1>
-                                                <a href={"tel:" + phoneNumber} className={s.linkText} target='_blank'>
-                                                    {phoneNumber}
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>}
-                                {address && <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
-                                    <div className={s.space6}>
-                                        <div>
-                                            <div className={s.iconMargin}>
-                                                <img src={addressLogo} className={s.mailIcon} />
-                                            </div>
                                             <h1 className={cx(s.contactTitle, s.subTitleText)}>
-                                                <FormattedMessage {...messages.contactFormAddress} />
+                                                <FormattedMessage {...messages.contactFormEmail} />
                                             </h1>
-                                            <h4 className={s.addressText}>
-                                                {address}
-                                            </h4>
+                                            <a href={"mailto:" + email} className={s.linkText} target='_blank'>{email}</a>
                                         </div>
                                     </div>
-                                </Col>}
-                            </Row>
+                                </div>
+                            </Col>
+                            <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
+                                <div className={s.space6}>
+                                    <div>
+                                        <div className={s.iconMargin}>
+                                            <img src={caller} className={s.mailIcon} />
+                                        </div>
+                                        <div>
+                                            <h1 className={cx(s.contactTitle, s.subTitleText)}><FormattedMessage {...messages.contactFormCall} /></h1>
+                                            <a href={"tel:" + phoneNumber} className={s.linkText} target='_blank'>
+                                                {phoneNumber}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col lg={4} md={4} sm={4} xs={12} className={s.alignCenter}>
+                                <div className={s.space6}>
+                                    <div>
+                                        <div className={s.iconMargin}>
+                                            <img src={addressLogo} className={s.mailIcon} />
+                                        </div>
+                                        <h1 className={cx(s.contactTitle, s.subTitleText)}>
+                                            <FormattedMessage {...messages.contactFormAddress} />
+                                        </h1>
+                                        <h4 className={s.addressText}>
+                                            {address}
+                                        </h4>
+                                    </div>
+                                </div>
+                            </Col>
                         </div>
                     </Col>
                     <Col lg={12} md={12} sm={12} xs={12} className={cx(s.marginTop)}>

@@ -30,7 +30,6 @@ import { url } from '../../../config';
 import PictureImage from '../../../../public/AdminIcons/default.svg'
 import ImageUploadComponent from '../ImageUploadComponent/ImageUploadComponent';
 import { doUploadImageBanner, startBannerUploaderLoader, stopBannerUploaderLoader } from '../../../actions/siteadmin/manageImageBanner';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class ImageBannerForm extends Component {
 
@@ -101,21 +100,18 @@ class ImageBannerForm extends Component {
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.adminTitleLabel} />
-                      <AdminTranslateButton identifier="imageBanner.title" label={formatMessage(messages.adminTitleLabel)} />
                     </ControlLabel>
                     <Field name="title" type="text" component={CommonFormComponent} label={formatMessage(messages.adminTitleLabel)} inputClass={cx(cp.formControlInput)} />
                   </FormGroup>
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.adminDescriptionLabel} />
-                      <AdminTranslateButton identifier="imageBanner.description" label={formatMessage(messages.adminTitleLabel)} />
                     </ControlLabel>
                     <Field name="description" type="text" component={CommonFormComponent} label={formatMessage(messages.adminDescriptionLabel)} inputClass={cx(cp.formControlInput)} />
                   </FormGroup>
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.buttonLabel} /> 1
-                      <AdminTranslateButton identifier="imageBanner.button1" label={`${formatMessage(messages.buttonLabel)} 1`} />
                     </ControlLabel>
                     <Field name="buttonLabel" type="text" component={CommonFormComponent} label={formatMessage(messages.buttonLabel) + ' 1'} inputClass={cx(cp.formControlInput)} />
                   </FormGroup>
@@ -128,8 +124,6 @@ class ImageBannerForm extends Component {
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.buttonLabel} /> 2
-                      <AdminTranslateButton identifier="imageBanner.button2" label={`${formatMessage(messages.buttonLabel)} 2`} />
-
                     </ControlLabel>
                     <Field name="buttonLabel2" type="text" component={CommonFormComponent} label={formatMessage(messages.buttonLabel) + ' 2'} inputClass={cx(cp.formControlInput)} />
                   </FormGroup>

@@ -1,15 +1,15 @@
 // General
 import React, { Component } from 'react';
 // Redux
+import { connect } from 'react-redux';
 import {
   Modal
 } from 'react-bootstrap';
-import { connect } from 'react-redux';
 // Style
-import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { closeAdminRolesModal } from '../../../actions/siteadmin/modalActions';
+import cx from 'classnames';
 import s from './AdminRolesModal.css';
+import { closeAdminRolesModal } from '../../../actions/siteadmin/modalActions';
 // Component
 import AdminRolesForm from '../AdminRolesForm';
 // Translation

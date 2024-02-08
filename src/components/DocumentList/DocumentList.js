@@ -36,12 +36,12 @@ class DocumentList extends Component {
   }
 
   async handleClick(id, fileName) {
-    const { mutate, mark } = this.props;
+    const { mutate } = this.props;
 
     const { data } = await mutate({
       RemoveDocumentList,
       variables: { id },
-      refetchQueries: [{ query: ShowDocumentListQuery, variables: { mark } }],
+      refetchQueries: [{ query: ShowDocumentListQuery }]
     });
 
 
@@ -64,7 +64,7 @@ class DocumentList extends Component {
   render() {
     const { data: { ShowDocumentList }, data } = this.props;
     let path = "/images/document/";
-    console.log(`ShowDocumentList`, ShowDocumentList, data)
+
     return (
       <div className={cx('row')}>
         {
@@ -101,10 +101,7 @@ export default compose(
   graphql(ShowDocumentListQuery, {
     options: {
       fetchPolicy: 'network-only'
-    },
-    variables: ({ mark }) => ({
-      mark
-    })
+    }
   }),
   graphql(RemoveDocumentList, {
     options: {

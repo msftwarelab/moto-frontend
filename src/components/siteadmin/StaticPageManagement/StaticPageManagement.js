@@ -43,16 +43,7 @@ class StaticPageManagement extends React.Component {
       {
         text: formatMessage(messages.termsPrivacy),
         url: '/privacy'
-      },
-      {
-        text: formatMessage(messages.help),
-        url: '/help'
-      },
-      {
-        text: formatMessage(messages.cookiePolicy),
-        url: '/cookie-policy'
-      }
-    ]
+      }]
 
     return data.map((value, key) => {
       return {

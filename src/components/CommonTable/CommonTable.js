@@ -20,7 +20,7 @@ class CommonTable extends React.Component {
         const theadData = thead();
         const tbodyData = tbody();
         return (
-            <div>{!isHeadingHide && <h1 className={cx(cs.commonTotalText, cs.spaceBottom5, cs.fontWeightBold)}>{title}</h1>}
+            <div>{!isHeadingHide &&  <h1 className={cx(cs.commonTotalText, cs.spaceBottom5, cs.fontWeightBold)}>{title}</h1>}
                 <div className={cx(cs.dFlexContainer, cs.mobileTableSearch, cs.flexEnd, 'mobileTableSearchRTL')}>
                     <div>
                         {isSearch && <>
@@ -64,7 +64,7 @@ class CommonTable extends React.Component {
                         </thead>
                         <tbody>
                             {
-                                tbodyData && tbodyData.length > 0 && tbodyData?.map((item, index) => {
+                                tbodyData?.map((item, index) => {
                                     return <tr key={item.id}>
                                         {item.data.map((value, index) => <td
                                             data-label={theadData[index].data}

@@ -87,7 +87,7 @@ class CookiesDisclaimer extends Component {
                           {sitename}{' '}
                           {formatMessage(messages.cookiesDisclaimer)}
                           {' '}
-                          <Link to={'/cookie-policy'} className={cx(s.labelText, s.linkStyle)}>{formatMessage(messages.cookiePolicy)}</Link>
+                          <Link to={'/policies'} className={cx(s.labelText, s.linkStyle)}>{formatMessage(messages.cookiePolicy)}</Link>
                         </span>
                       </div>
 

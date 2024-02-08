@@ -21,7 +21,6 @@ import messages from '../../../../locale/messages';
 import submit from './submit';
 import validate from './validate';
 import CommonFormComponent from '../../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 
 class WhyHostFormBlock3 extends Component {
 
@@ -46,7 +45,6 @@ class WhyHostFormBlock3 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.whyBlockTitleLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock3Title1" label={`${formatMessage(messages.whyBlockTitleLabel)} 1}`} />
                 <Field
                   name="whyBlockTitle1"
                   type="text"
@@ -56,7 +54,6 @@ class WhyHostFormBlock3 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.whyBlockContentLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock3Content1" label={`${formatMessage(messages.whyBlockContentLabel)} 1`} />
                 <Field
                   name="whyBlockContent1"
                   component={CommonFormComponent}
@@ -71,7 +68,6 @@ class WhyHostFormBlock3 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.whyBlockTitleLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock3Title2" label={`${formatMessage(messages.whyBlockTitleLabel)} 2`} />
                 <Field
                   name="whyBlockTitle2"
                   inputClass={cx(cs.formControlInput)}
@@ -81,7 +77,6 @@ class WhyHostFormBlock3 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.whyBlockContentLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock3Content2" label={`${formatMessage(messages.whyBlockContentLabel)} 2`} />
                 <Field
                   name="whyBlockContent2"
                   component={CommonFormComponent}

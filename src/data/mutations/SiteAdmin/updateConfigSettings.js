@@ -31,8 +31,8 @@ const updateConfigSettings = {
 		googleSecretId: { type: StringType },
 		googleClientId: { type: StringType },
 		deepLinkContent: { type: StringType },
-		fcmPushNotificationKey: { type: StringType }
-
+		fcmPushNotificationKey: { type: StringType },
+		opnPaymentsPublicKey: { type: StringType }
 	},
 
 	async resolve({ request }, {
@@ -58,7 +58,8 @@ const updateConfigSettings = {
 		googleSecretId,
 		googleClientId,
 		deepLinkContent,
-		fcmPushNotificationKey
+		fcmPushNotificationKey,
+		opnPaymentsPublicKey
 	}) {
 		try {
 			if (!request.user || !request.user.admin) {
@@ -91,7 +92,8 @@ const updateConfigSettings = {
 				googleSecretId,
 				googleClientId,
 				deepLinkContent,
-				fcmPushNotificationKey
+				fcmPushNotificationKey,
+				opnPaymentsPublicKey
 			};
 
 			await Promise.all(

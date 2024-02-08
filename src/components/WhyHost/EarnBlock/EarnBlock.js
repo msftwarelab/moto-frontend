@@ -5,7 +5,6 @@ import {
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './EarnBlock.css';
 import { injectIntl } from 'react-intl';
-import Translation from '../../Translation/Translation';
 class EarnBlock extends Component {
 
   render() {
@@ -14,10 +13,10 @@ class EarnBlock extends Component {
       <Grid className={s.centerBlock}>
         <div className={s.mainBlock}>
           <h2 className={s.heading}>
-            {data && <Translation identifier="earnBlockTitle1">{data.earnBlockTitle1}</Translation>}
+            {data && data.earnBlockTitle1}
           </h2>
           <h3 className={s.estimate}>
-            {data && <Translation identifier="earnBlockContent1">{data.earnBlockContent1}</Translation>}
+            {data && data.earnBlockContent1}
           </h3>
         </div>
       </Grid>

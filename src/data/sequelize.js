@@ -1,14 +1,14 @@
-import Sequelize from 'sequelize';
-import { databaseUrl } from '../config';
+import Sequelize from "sequelize";
+import { databaseUrl } from "../config";
 
 const sequelize = new Sequelize(databaseUrl, {
   define: {
-    freezeTableName: true
+    freezeTableName: true,
   },
   dialectOptions: {
-    charset: 'utf8mb4'
+    charset: "utf8mb4",
   },
-  logging: console.log
+  logging: console.log,
 });
 
 export default sequelize;

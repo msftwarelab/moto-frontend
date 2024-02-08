@@ -20,7 +20,7 @@ import CommonFormComponent from '../../../CommonField/CommonFormComponent';
 // Translation
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../../locale/messages';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
+
 class WhyHostFormBlock6 extends Component {
 
     render() {
@@ -38,7 +38,7 @@ class WhyHostFormBlock6 extends Component {
                             <FormGroup className={s.space3}>
 
                                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceTitleHeading} /></label>
-                                <AdminTranslateButton identifier="whyBlock6peaceTitleHeading" label={formatMessage(messages.peaceTitleHeading)} />
+
                                 <Field
                                     name="peaceTitleHeading"
                                     type="text"
@@ -51,7 +51,7 @@ class WhyHostFormBlock6 extends Component {
                             <FormGroup className={s.space3}>
 
                                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceTitleLabel} /> 3</label>
-                                <AdminTranslateButton identifier="whyBlock6peaceTitle3" label={`${formatMessage(messages.peaceTitleLabel)} 3}`} />
+
                                 <Field
                                     name="peaceTitle3"
                                     inputClass={cx(cs.formControlInput)}
@@ -63,7 +63,7 @@ class WhyHostFormBlock6 extends Component {
                             <FormGroup className={s.space3}>
 
                                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceContentLabel} /> 3</label>
-                                <AdminTranslateButton identifier="whyBlock6peaceContent3" label={`${formatMessage(messages.peaceContentLabel)} 3}`} />
+
                                 <Field
                                     name="peaceContent3"
                                     componentClass={"textarea"}

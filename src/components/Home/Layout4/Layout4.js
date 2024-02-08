@@ -4,10 +4,9 @@ import s from './Layout4.css';
 import bt from '../../commonStyle.css';
 import cx from 'classnames';
 import SearchForm from '../SearchForm/SearchForm';
-import Translation from '../../Translation/Translation';
 
 class Layout4 extends React.Component {
-  
+
 
   render() {
     const { title, content, bannerImage } = this.props;
@@ -17,8 +16,8 @@ class Layout4 extends React.Component {
           <SearchForm />
           <div>
             <h1 className={cx(s.bannerCaptionText, bt.paddingTop5)}>
-              <Translation identifier="caption.title">{title}</Translation>
-              {' '} <Translation identifier="caption.content">{content}</Translation>
+              {title}
+              {' '} {content}
             </h1>
           </div>
         </div>

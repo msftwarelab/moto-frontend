@@ -1,35 +1,34 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Field, reduxForm } from 'redux-form';
 import submit from './submit';
 import validate from './validate';
 
-import { compose } from 'react-apollo';
+import { graphql, gql, compose } from 'react-apollo';
 import { connect } from 'react-redux';
 
 // Style
 import cx from 'classnames';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
   Button,
-  Col,
-  FormGroup,
   Row,
+  FormGroup,
+  Col,
 } from 'react-bootstrap';
-import cp from '../../../components/commonStyle.css';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './BannerSettingsForm.css';
+import cp from '../../../components/commonStyle.css';
 
-import PictureImage from '../../../../public/AdminIcons/default.svg';
 import Loader from '../../Loader';
+import PictureImage from '../../../../public/AdminIcons/default.svg'
 
 // Translation
-import { FormattedMessage, injectIntl } from 'react-intl';
-import { doUploadHomeBanner, startBannerUploaderLoader, stopBannerUploaderLoader } from '../../../actions/siteadmin/manageHomepageBanner';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import messages from '../../../locale/messages';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
 import ImageUploadComponent from '../ImageUploadComponent/ImageUploadComponent';
+import { startBannerUploaderLoader, stopBannerUploaderLoader, doUploadHomeBanner } from '../../../actions/siteadmin/manageHomepageBanner';
 class BannerSettingsForm extends Component {
 
   static propTypes = {
@@ -101,7 +100,6 @@ class BannerSettingsForm extends Component {
                     <Row>
                       <Col xs={12} sm={12} md={12} lg={12}>
                         <label className={cp.labelTextNew} ><FormattedMessage {...messages.titleAdminLabel} /></label>
-                        <AdminTranslateButton identifier="caption.title" />
                       </Col>
                       <Col xs={12} sm={12} md={12} lg={12}>
                         <Field name="title" type="text" inputClass={cx(cp.formControlInput)} component={CommonFormComponent} />
@@ -112,8 +110,6 @@ class BannerSettingsForm extends Component {
                     <Row>
                       <Col xs={12} sm={12} md={12} lg={12} >
                         <label className={cp.labelTextNew} ><FormattedMessage {...messages.contentLabel} /></label>
-                        <AdminTranslateButton identifier="caption.content" label={messages.contentLabel.defaultMessage} />
-                        
                       </Col>
                       <Col xs={12} sm={12} md={12} lg={12}>
                         <Field name="content" component={CommonFormComponent} componentClass={'textarea'} />

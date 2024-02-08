@@ -30,11 +30,6 @@ const DocumentVerification = Model.define('DocumentVerification', {
         defaultValue: 'pending',
     },
 
-    document_mark: {
-        type: DataType.ENUM('default', 'company_registration', 'green_card', 'passport'),
-        defaultValue: 'default',
-    }
-
    
 });
 

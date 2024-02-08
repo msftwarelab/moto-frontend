@@ -25,7 +25,6 @@ import Link from '../../Link';
 import { FormattedMessage } from 'react-intl';
 import messages from '../../../locale/messages';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
-import AdminTranslateButton from "../../AdminTranslateButton"
 
 //Image
 import arrowIcon from '/public/AdminIcons/backArrow.svg';
@@ -100,7 +99,7 @@ class EditStaticPage extends React.Component {
   }
 
   render() {
-    const { error, handleSubmit, submitting, dispatch, initialValues, title, pageId } = this.props;
+    const { error, handleSubmit, submitting, dispatch, initialValues, title } = this.props;
     const { parentData } = this.props;
     const ReactQuill = this.ReactQuill;
     const { formatMessage } = this.props.intl;
@@ -123,14 +122,12 @@ class EditStaticPage extends React.Component {
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.metaTitleLabel} />
-                      <AdminTranslateButton identifier={`static.metaTitleLabel.${pageId}`} />
                     </ControlLabel>
                     <Field name="metaTitle" type="text" component={CommonFormComponent} label={formatMessage(messages.metaTitleLabel)} inputClass={cp.formControlInput} />
                   </FormGroup>
                   <FormGroup className={s.space3}>
                     <ControlLabel className={cp.labelTextNew}>
                       <FormattedMessage {...messages.metaDescriptionLabel} />
-                      <AdminTranslateButton identifier={`static.metaDescriptionLabel.${pageId}`} />
                     </ControlLabel>
                     <Field name="metaDescription" componentClass={'textarea'} component={CommonFormComponent} label={formatMessage(messages.metaDescriptionLabel)} />
                   </FormGroup>
@@ -138,7 +135,6 @@ class EditStaticPage extends React.Component {
                     <Row>
                       <Col xs={12} sm={12} md={12} lg={12}>
                         <label className={cp.labelTextNew} ><FormattedMessage {...messages.contentLabel} /></label>
-                        <AdminTranslateButton htmlEditor identifier={`static.contentLabel.${pageId}`} />
                       </Col>
                       <Col xs={12} sm={12} md={12} lg={12}>
                         <Field name="content" component={this.renderQuill} />

@@ -26,10 +26,10 @@ class EditStaticPage extends React.Component {
 
 
     render() {
-        const { editStaticPageData , title, pageId } = this.props;
+        const { editStaticPageData , title } = this.props;
         return (
             <EditStaticPageManage 
-                title={title} pageId={pageId} initialValues={editStaticPageData.getEditStaticPage} 
+                title={title} initialValues={editStaticPageData.getEditStaticPage} 
             />  
         );
     }

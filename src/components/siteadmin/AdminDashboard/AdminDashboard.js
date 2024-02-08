@@ -1,26 +1,29 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
+import {
+    Row,
+    Col,
+    Grid
+} from 'react-bootstrap';
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import {
-    Col,
-    Row
-} from 'react-bootstrap';
-import cs from '../../../components/commonStyle.css';
 import s from './AdminDashboard.css';
+import cs from '../../../components/commonStyle.css'
 
 // Translation
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../locale/messages';
 
 //Image
-import listingIcon from '/public/AdminIcons/dashBoardListing.svg';
 import userIcon from '/public/AdminIcons/dashBoardUserIcon.svg';
+import listingIcon from '/public/AdminIcons/dashBoardListing.svg';
+import reservationsIcon from '/public/AdminIcons/reservationIcon.svg';
 
 // Component
-import Loader from '../../../components/Loader';
+import DashboardTile from './DashboardTile';
 import AdminDashboardReservations from './AdminDashboardReservations';
+import Loader from '../../../components/Loader';
 
 class AdminDashboard extends Component {
 

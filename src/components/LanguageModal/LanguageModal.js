@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { setLocale } from '../../actions/intl';
 
 // Style
-import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import cx from 'classnames';
 import s from './LanguageModal.css';
 
 import { closeHeaderModal } from '../../actions/modalActions';
 
-import moment from 'moment';
 import { formatLocale, isRTL } from '../../helpers/formatLocale';
+import moment from 'moment';
 
 class LanguageModal extends React.Component {
 

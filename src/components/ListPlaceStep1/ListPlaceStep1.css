@@ -151,7 +151,7 @@
 }
 .landingMainContent {
 	padding: 43px 54px 170px;
-	height: auto;
+	height: 650px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }

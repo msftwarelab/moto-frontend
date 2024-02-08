@@ -1,8 +1,7 @@
-mutation uploadDocument($fileName: String,$fileType: String,$mark: String){
+mutation uploadDocument($fileName: String,$fileType: String,){
     uploadDocument(
       fileName: $fileName,
-      fileType: $fileType,
-      mark: $mark
+      fileType: $fileType
     ) 
     {
         fileName

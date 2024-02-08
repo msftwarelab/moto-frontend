@@ -1,37 +1,38 @@
-import bodyParser from 'body-parser';
+import path from 'path';
+import express from 'express';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
-import express from 'express';
-import expressGraphQL from 'express-graphql';
-import expressJwt from 'express-jwt';
 import requestLanguage from 'express-request-language';
-import path from 'path';
-import PrettyError from 'pretty-error';
+import bodyParser from 'body-parser';
+import expressJwt from 'express-jwt';
+import expressGraphQL from 'express-graphql';
+import jwt from 'jsonwebtoken';
 import React from 'react';
-import { renderToStringWithData } from 'react-apollo';
 import ReactDOM from 'react-dom/server';
+import { renderToStringWithData } from 'react-apollo';
+import PrettyError from 'pretty-error';
 import { IntlProvider } from 'react-intl';
 import router from './router';
 
-import assets from './assets.json'; // eslint-disable-line import/no-unresolved
+import './serverIntlPolyfill';
+import createApolloClient from './core/createApolloClient';
 import App from './components/App';
 import Html from './components/Html';
-import createApolloClient from './core/createApolloClient';
+import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
+import errorPageStyle from './routes/error/ErrorPage.css';
 import passport from './core/passport';
 import models from './data/models';
 import schema from './data/schema';
 import routes from './routes';
-import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
-import errorPageStyle from './routes/error/ErrorPage.css';
-import './serverIntlPolyfill';
+import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 
-import { setRuntimeVariable } from './actions/runtime';
 import configureStore from './store/configureStore';
+import { setRuntimeVariable } from './actions/runtime';
 
-import { loadAccount } from './actions/account';
 import { setLocale } from './actions/intl';
+import { loadAccount } from './actions/account';
 
-import { auth, locales, port } from './config';
+import { port, auth, locales } from './config';
 
 // Social Media Authentication
 import facebookAuth from './core/auth/facebook';
@@ -41,56 +42,56 @@ import googleAuth from './core/auth/google';
 import { setSiteSettings } from './actions/siteSettings';
 
 // Currency Rates Action
-import { getCurrenciesData } from './actions/getCurrencies';
 import { getCurrencyRates } from './actions/getCurrencyRates';
+import { getCurrenciesData } from './actions/getCurrencies';
 
 // Service Fees Action
-import { getHomeData } from './actions/Home/getHomeData';
 import { getServiceFees } from './actions/ServiceFees/getServiceFees';
+import { getHomeData } from './actions/Home/getHomeData';
 
 // File Upload
-import bannerUpload from './core/bannerUpload';
-import csvRoutes from './core/csv/csvRoutes';
-import documentUpload from './core/documentUpload';
-import downloadRoute from './core/download/downloadRoute';
-import favIconUpload from './core/favIconUpload';
 import fileUpload from './core/fileUpload';
-import homeBannerUpload from './core/homeBannerUpload';
-import homeLogoUpload from './core/homeLogoUpload';
-import locationUpload from './core/locationUpload';
+import documentUpload from './core/documentUpload';
 import logoUpload from './core/logoUpload';
+import homeLogoUpload from './core/homeLogoUpload'
+import locationUpload from './core/locationUpload';
 import profilePhotoUpload from './core/profilePhotoUpload';
+import bannerUpload from './core/bannerUpload';
+import downloadRoute from './core/download/downloadRoute';
+import csvRoutes from './core/csv/csvRoutes';
+import homeBannerUpload from './core/homeBannerUpload';
+import favIconUpload from './core/favIconUpload';
 import whyHostUpload from './core/whyHostUpload';
 
 // For Emails
 import sendEmail from './core/email/emailSetup';
 
 // Payment Gateway
-import payoutRoutes from './core/payment/payout/payoutRoutes';
 import paypalRoutes from './core/payment/paypal';
+import payoutRoutes from './core/payment/payout/payoutRoutes';
 import refundRoutes from './core/payment/refund/refundRoutes';
 
 // CRON Jobs
-import autoPayouToHost from './core/cron/autoPayoutToHost';
-import calendarPriceUpdate from './core/cron/calendarPriceUpdate';
 import cron from './core/cron/cron';
-import autoClaimPayoutToHost from './core/cron/helper/autoClaimPayoutToHost';
-import reservationComplete from './core/cron/reservationComplete';
 import reservationExpire from './core/cron/reservationExpire';
+import reservationComplete from './core/cron/reservationComplete';
 import reservationReview from './core/cron/reservationReview';
 import updateListStatus from './core/cron/updateListStatus';
 import updateReviewCount from './core/cron/updateReviewCount';
+import calendarPriceUpdate from './core/cron/calendarPriceUpdate';
+import autoPayouToHost from './core/cron/autoPayoutToHost';
+import autoClaimPayoutToHost from './core/cron/helper/autoClaimPayoutToHost';
 
 // iCal Routes
-import exportICalRoutes from './core/iCal/exportIcal/exportRoutes';
-import iCalCron from './core/iCal/iCalCron';
 import iCalRoutes from './core/iCal/iCalRoutes';
+import iCalCron from './core/iCal/iCalCron';
+import exportICalRoutes from './core/iCal/exportIcal/exportRoutes';
 
 // Stripe
-import stripeAddPayout from './core/payment/stripe/stripeAddPayout';
 import stripePayment from './core/payment/stripe/stripePayment';
-import stripePayout from './core/payment/stripe/stripePayout';
 import stripeRefund from './core/payment/stripe/stripeRefund';
+import stripePayout from './core/payment/stripe/stripePayout';
+import stripeAddPayout from './core/payment/stripe/stripeAddPayout';
 
 // Twilio SMS
 import TwilioSms from './core/sms/twilio/sendSms';
@@ -104,14 +105,21 @@ import sitemapRoutes from './core/sitemap/sitemapRoutes';
 
 import pushNotificationRoutes from './core/pushNotifications/pushNotificationRoutes';
 
-import { getPrivileges } from './actions/siteadmin/AdminRoles/manageAdminRoles';
 import { getAdminUser } from './actions/siteadmin/AdminUser/manageAdminUser';
+import { getPrivileges } from './actions/siteadmin/AdminRoles/manageAdminRoles';
 import claimImagesUpload from './core/claimImagesUpload';
 import deepLinkBundle from './core/deepLinkBundle';
-import { getUserCompany } from './actions/getUserCompany';
+import { opnPaymentsMakeReservation } from './core/payment/opnPayments/endpoints/makeOpnPaymentsReservation';
+import { opnPaymentsPaymentComplete } from './core/payment/opnPayments/endpoints/OpnPaymentsPaymentComplete';
+import { opnPaymentsPayout } from './core/payment/opnPayments/endpoints/opnPaymentsPayout';
+
+const cors = require("cors");
 
 const app = express();
 app.use(compression());
+app.use(cors({
+  origin: "http://localhost:3000"
+}))
 
 //
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
@@ -147,7 +155,7 @@ app.use(bodyParser.json());
 // Authentication
 // -----------------------------------------------------------------------------
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization, ');
   next();
 });
 app.use(expressJwt({
@@ -223,6 +231,11 @@ stripeRefund(app);
 stripePayout(app);
 stripeAddPayout(app);
 
+// OpnPayments
+opnPaymentsMakeReservation(app);
+opnPaymentsPaymentComplete(app);
+opnPaymentsPayout(app)
+
 // Twilio -SMS
 TwilioSms(app);
 
@@ -263,8 +276,7 @@ app.use('/graphql', graphqlMiddleware);
 //
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
-app.get('/*', async (req, res, next) => {
-  console.log(`Use req.get('en/*')`)
+app.get('*', async (req, res, next) => {
   try {
     const apolloClient = createApolloClient({
       schema,
@@ -305,14 +317,11 @@ app.get('/*', async (req, res, next) => {
 
     // User Login
     if (req.user != null && req.user != undefined && req.user.admin != true) {
-
       store.dispatch(setRuntimeVariable({
         name: 'isAuthenticated',
         value: req.user ? true : false,
       }));
       await store.dispatch(loadAccount());
-      await store.dispatch(getUserCompany(req.user.id));
-
     }
 
     store.dispatch(setRuntimeVariable({
@@ -326,11 +335,9 @@ app.get('/*', async (req, res, next) => {
     }));
 
     const locale = req.language;
-
     const intl = await store.dispatch(setLocale({
       locale,
     }));
-    
 
     const css = new Set();
 
@@ -353,8 +360,6 @@ app.get('/*', async (req, res, next) => {
       locale,
       intl
     };
-    
-    
 
     const route = await router.resolve(context);
 
@@ -392,7 +397,6 @@ app.get('/*', async (req, res, next) => {
     }
     data.state = context.store.getState();
     data.scripts = [assets["vendors~polyfills"].js];
-    console.log(assets.client.js)
     data.scripts.push(assets.client.js);
     data.lang = locale;
     const html = ReactDOM.renderToStaticMarkup(<Html {...data} />);

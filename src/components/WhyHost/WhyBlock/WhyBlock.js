@@ -8,7 +8,6 @@ import {
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import cx from 'classnames';
 import s from './WhyBlock.css';
-import Translation from '../../Translation/Translation';
 
 class SocialLogin extends Component {
   static propTypes = {
@@ -33,11 +32,10 @@ class SocialLogin extends Component {
           <div className={s.whyblock}>
             <div>
               <h4 className={s.common}>
-                {data && <Translation identifier="whyBlock3Title1">{data.whyBlockTitle1}</Translation>}
+                {data && data.whyBlockTitle1}
               </h4>
               <p className={s.common}>
-                {data && <Translation identifier="whyBlock3Content1">{data.whyBlockContent1}</Translation>}
-
+                {data && data.whyBlockContent1}
               </p>
             </div>
             <img src={'/images/home/' + data.whyBlockImage1} className={cx(s.imageObject, s.imageWidthHeight)}/>
@@ -45,12 +43,10 @@ class SocialLogin extends Component {
           <div className={cx(s.whyblock, s.whyblockTwo)}>
             <div>
               <h4 className={s.common}>
-                {data && <Translation identifier="whyBlock3Title2">{data.whyBlockTitle2}</Translation>}
-
-                
+                {data && data.whyBlockTitle2}
               </h4>
               <p className={s.common}>
-                {data && <Translation identifier="whyBlock3Content2">{data.whyBlockContent2}</Translation>}
+                {data && data.whyBlockContent2}
               </p>
             </div>
             <img src={'/images/home/' + data.whyBlockImage2} className={cx(s.imageObject, s.imageWidthHeight)} />

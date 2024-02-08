@@ -10,7 +10,7 @@ async function submit(values, dispatch) {
     toastr.error("Error", "Please Add  Meta Title")
   } else if (values.metaDescription == null || values.metaDescription && values.metaDescription.trim() == '') {
     toastr.error("Error", "Please Add  Meta Description")
-   } else {
+  } else {
     await dispatch(updateStaticPageAction(values)) ;
   }
 

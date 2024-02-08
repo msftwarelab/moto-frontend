@@ -2498,22 +2498,6 @@ const messages = defineMessages({
     defaultMessage: 'Car type',
     description: 'What will guests have',
   },
-
-  areYouCompany: {
-    id: 'app.userType',
-    defaultMessage: 'Are you a company?',
-    description: 'Are you a company?',
-  },
-  userTypeCompany: {
-    id: 'app.userTypeCompany',
-    defaultMessage: 'Company',
-    description: 'Company'
-  },
-  userTypeIndividual: {
-    id: 'app.userTypeIndividual',
-    defaultMessage: 'Individual',
-    description: 'Individual'
-  },
   howManyRooms: {
     id: 'app.howManyRooms',
     defaultMessage: 'How many total rooms does your property have?',
@@ -2569,11 +2553,6 @@ const messages = defineMessages({
     id: 'app.yourFullAddress',
     defaultMessage: 'Your Full Address',
     description: 'Your Full Address',
-  },
-  companyFullAddress: {
-    id: 'app.companyFullAddress',
-    defaultMessage: 'Company Full Address',
-    description: 'Company Full Address',
   },
   street: {
     id: 'app.street',
@@ -3530,15 +3509,15 @@ const messages = defineMessages({
     defaultMessage: 'PayPal',
     description: 'payPal',
   },
+  opnPayments: {
+    id: 'app.opnPayments',
+    defaultMessage: 'OpnPayments',
+    description: 'opnPayments'
+  },
   fullName: {
     id: 'app.fullName',
     defaultMessage: 'Full name',
     description: 'fullName',
-  },
-  fullCompanyName: {
-    id: 'app.fullCompanyName',
-    defaultMessage: 'Full Company name',
-    description: 'fullCompanyName',
   },
   cardNumber: {
     id: 'app.cardNumber',
@@ -8584,7 +8563,17 @@ const messages = defineMessages({
     id: 'app.maxTripLength',
     defaultMessage: 'Maximum trip length',
     description: 'Trip Length',
-  }
+  },
+  opnPaymentsSettings: {
+    id: "app.opnPaymentsSettings",
+    defaultMessage: "OpnPayments account settings",
+    description: "Here you can setup opnPayments"
+  },
+  opnPaymentsPublicKey: {
+    id: "app.opnPaymentsPublicKey",
+    defaultMessage: "OpnPayments publishable key",
+    description: "Enter your opnPayments public key"
+  },
 });
 
 export default messages;

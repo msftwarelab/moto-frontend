@@ -25,7 +25,7 @@ export async function getConfigurationData({ name }) {
             }));
         }
     
-        return await settingsData;
+        return settingsData;
     } catch (error) {
         return false;
     }

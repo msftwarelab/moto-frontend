@@ -10,3 +10,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: moto
+    volumes:
+      - ./db/db_dump.sql:/docker-entrypoint-initdb.d/db_dump.sql

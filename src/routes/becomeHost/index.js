@@ -23,14 +23,13 @@ export default async function action({ store, query, params }) {
   const listingSteps = store.getState().location.listingSteps;
   const initialValuesLoaded = store.getState().location.initialValuesLoaded;
   const baseCurrency = store.getState().currency.base;
-  const company = store.getState().account.company;
   let adminPrivileges = store.getState().account.privileges && store.getState().account.privileges.privileges;
   let privileges = store.getState().listSettings && store.getState().listSettings.privileges;
 
   const listingPages = [
     'index', 'home', 'car', 'location', 'map', 'features', 'photos', 'description',
     'car-rules', 'review-how-renters-book', 'min-max-days', 'calendar',
-    'pricing', 'discount', 'booking-scenarios', 'local-laws', 'about-you'
+    'pricing', 'discount', 'booking-scenarios', 'local-laws'
   ];
 
   // From URI
@@ -65,10 +64,6 @@ export default async function action({ store, query, params }) {
 
   if (isAdminAuthenticated && mode == 'new') {
     return { redirect: '/siteadmin' };
-  }
-  
-  if (!company) {
-    return { redirect: '/become-a-owner/verify' };
   }
 
   if (listId != undefined && !isNaN(listId)) {

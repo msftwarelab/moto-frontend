@@ -24,7 +24,6 @@ import messages from '../../../../locale/messages';
 import submit from './submit';
 import validate from './validate';
 import CommonFormComponent from '../../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 
 class WhyHostFormBlock7 extends Component {
 
@@ -41,7 +40,7 @@ class WhyHostFormBlock7 extends Component {
 
   render() {
 
-    const { error, handleSubmit, submitting, reviewId, image, imageloader, } = this.props;
+    const { error, handleSubmit, submitting, reviewId, image, imageloader } = this.props;
     const { formatMessage } = this.props.intl;
 
     return (
@@ -54,8 +53,6 @@ class WhyHostFormBlock7 extends Component {
               <FormGroup className={cs.space3}>
                 <ControlLabel className={s.labelTextNew}>
                   <FormattedMessage {...messages.name} />
-                  {reviewId && <AdminTranslateButton identifier={`whyBlock7userName.${reviewId}`} label={formatMessage(messages.name)} />}
-
                 </ControlLabel>
                 <Field
                   name="userName"
@@ -69,10 +66,7 @@ class WhyHostFormBlock7 extends Component {
               <FormGroup className={cs.space3}>
                 <ControlLabel className={s.labelTextNew}>
                   <FormattedMessage {...messages.reviewContentLabel} />
-                  {reviewId && <AdminTranslateButton identifier={`whyBlock7reviewContent.${reviewId}`} label={formatMessage(messages.reviewContentLabel)} />}
-
                 </ControlLabel>
-
                 <Field
                   name="reviewContent"
                   componentClass={"textarea"}

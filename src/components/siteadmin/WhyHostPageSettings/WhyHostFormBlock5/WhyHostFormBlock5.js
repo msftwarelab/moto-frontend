@@ -21,7 +21,6 @@ import messages from '../../../../locale/messages';
 import submit from './submit';
 import validate from './validate';
 import CommonFormComponent from '../../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 class WhyHostFormBlock5 extends Component {
 
 
@@ -39,7 +38,6 @@ class WhyHostFormBlock5 extends Component {
               {error && <strong>{formatMessage(error)}</strong>}
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleHeading} /></label>
-                <AdminTranslateButton identifier="whyBlock5workTitleHeading" label={formatMessage(messages.workTitleHeading)} />
                 <Field
                   inputClass={cx(cs.formControlInput)}
                   name="workTitleHeading"
@@ -57,7 +55,7 @@ class WhyHostFormBlock5 extends Component {
               <FormGroup className={s.space3}>
 
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceTitleLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock5peaceTitle1" label={`${formatMessage(messages.peaceTitleLabel)} 1`} />
+
                 <Field
                   name="peaceTitle1"
                   type="text"
@@ -69,7 +67,7 @@ class WhyHostFormBlock5 extends Component {
               <FormGroup className={s.space3}>
 
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceContentLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock5peaceContent1" label={`${formatMessage(messages.peaceContentLabel)} 1`} textarea />
+
                 <Field
                   name="peaceContent1"
                   componentClass={"textarea"}
@@ -80,7 +78,7 @@ class WhyHostFormBlock5 extends Component {
               <FormGroup className={s.space3}>
 
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceTitleLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock5peaceTitle2" label={`${formatMessage(messages.peaceTitleLabel)} 2`} />
+
                 <Field
                   name="peaceTitle2"
                   type="text"
@@ -91,7 +89,6 @@ class WhyHostFormBlock5 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.peaceContentLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock5peaceContent2" label={`${formatMessage(messages.peaceContentLabel)} 2`} textarea />
                 <Field
                   name="peaceContent2"
                   component={CommonFormComponent}

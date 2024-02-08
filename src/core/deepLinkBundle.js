@@ -1,7 +1,7 @@
 import { getConfigurationData } from "./getConfigurationData";
 
 const deepLinkBundle = app =>{
-    app.get('/.well-known/apple-app-site-association', function (req, res, next) {
+    app.get('/apple-app-site-association', function (req, res, next) {
         next();
       }, async (req, res) => {
         
@@ -12,7 +12,7 @@ const deepLinkBundle = app =>{
             details: [
               {
                 appID: configData.deepLinkBundleId,
-                'paths': ['/password/verification/', '/user/verification', '/review/write/']
+                'paths': ['/password/verification/', '/user/verification']
               }
             ]
           }

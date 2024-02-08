@@ -32,7 +32,6 @@ import CommonFormComponent from '../../CommonField/CommonFormComponent';
 
 //Image
 import arrowIcon from '/public/AdminIcons/backArrow.svg';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class EditPopularLocationManagement extends React.Component {
 
@@ -48,14 +47,11 @@ class EditPopularLocationManagement extends React.Component {
 
   renderPlacesSuggest = ({ input, label, meta: { touched, error }, className }) => {
     const { formatMessage } = this.props.intl;
-    const { initialValues } = this.props;
     return (
       <FormGroup className={s.space3}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
             <label className={cs.labelTextNew} >{label}</label>
-            <AdminTranslateButton identifier={`popularLocation.locationAddress.${initialValues.id}`} label={formatMessage(messages.location)} />
-
           </Col>
           <Col xs={12} sm={12} md={12} lg={12}>
             <PlaceGeoSuggest
@@ -76,7 +72,7 @@ class EditPopularLocationManagement extends React.Component {
     const { error, handleSubmit, submitting, dispatch, initialValues, title } = this.props;
     const { data } = this.props;
     const { formatMessage } = this.props.intl;
-    const { id } = initialValues;
+
 
     return (
       <div className={cx(s.pagecontentWrapper, 'addpopular-autocomplete', 'pagecontentWrapperRTL')}>
@@ -105,13 +101,9 @@ class EditPopularLocationManagement extends React.Component {
                 <FormGroup className={s.space3}>
                   <ControlLabel className={cs.labelTextNew}>
                     <FormattedMessage {...messages.location} />
-                    <AdminTranslateButton identifier={`popularLocation.location.${initialValues.id}`} label={formatMessage(messages.location)} />
                   </ControlLabel>
                   <Field name="location" type="text" component={CommonFormComponent} inputClass={cx(cs.formControlInput)} label={formatMessage(messages.location)} />
-                  
                 </FormGroup>
-
-
                 <Field name="locationAddress" type="text" component={this.renderPlacesSuggest} label={formatMessage(messages.locationAddress)} />
                 <FormGroup className={s.noMargin}>
                   <Row>

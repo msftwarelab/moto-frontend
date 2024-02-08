@@ -17,12 +17,19 @@ import DocumentList from '../DocumentList';
 import { graphql, gql, compose } from 'react-apollo';
 //Image
 import PictureImage from '/public/SiteIcons/photoUpload.svg';
-import ShowDocumentListQuery from "../DocumentList/ShowListDocument.graphql";
+
+const query = gql`query ShowDocumentList {
+    ShowDocumentList {
+        id
+        userId,
+        fileName,
+        fileType
+    }
+  }`;
 
 class DocumentUpload extends Component {
 
   static propTypes = {
-    mark: PropTypes.string,
   };
 
   constructor(props) {
@@ -45,7 +52,7 @@ class DocumentUpload extends Component {
   }
 
   async complete(file) {
-    const { mutate, mark } = this.props;
+    const { mutate } = this.props;
     let variables = {};
     if (file && file.xhr) {
       const { files } = JSON.parse(file.xhr.response);
@@ -53,12 +60,11 @@ class DocumentUpload extends Component {
       let fileType = files[0].mimetype;
       variables = {
         fileName,
-        fileType,
-        mark
+        fileType
       };
       const { data } = await mutate({
         variables,
-        refetchQueries: [{ query: ShowDocumentListQuery, variables: { mark } }],
+        refetchQueries: [{ query }]
       });
 
       if (data && data.uploadDocument) {
@@ -92,7 +98,7 @@ class DocumentUpload extends Component {
   }
 
   render() {
-    const { placeholder, mark } = this.props;
+    const { placeholder, listId } = this.props;
     const djsConfig = {
       dictDefaultMessage: '',
       addRemoveLinks: false,
@@ -123,7 +129,7 @@ class DocumentUpload extends Component {
             <span className={cx('documentPlaceholder')}>{placeholder}</span>
           </DropzoneComponent>
         </div>
-        <DocumentList mark={mark}  />
+        <DocumentList />
       </div>
     );
   }
@@ -139,11 +145,10 @@ const mapDispatch = {
 
 export default compose(withStyles(s),
 
-  graphql(gql`mutation uploadDocument($fileName: String,$fileType: String,$mark: String){
+  graphql(gql`mutation uploadDocument($fileName: String,$fileType: String,){
      uploadDocument(
        fileName: $fileName,
-       fileType: $fileType,
-       mark: $mark
+       fileType: $fileType
      ) {    
          fileName
          fileType

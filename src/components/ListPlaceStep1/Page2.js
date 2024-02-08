@@ -20,7 +20,6 @@ import update from './update';
 import messages from '../../locale/messages';
 import validate from './validate';
 import CommonFormComponent from '../CommonField/CommonFormComponent';
-import Translation, { TranslationWrapper } from '../Translation/Translation';
 
 class Page2 extends Component {
 
@@ -115,7 +114,6 @@ class Page2 extends Component {
     if (existingList) {
       path = "home";
     }
-    console.log(`carType`, carType)
     return (
       <div className={cx(s.stepGrid, 'stepGridRTL')}>
         <SidePanel
@@ -136,17 +134,14 @@ class Page2 extends Component {
                 >
                   {
                     carType.map((value, key) => {
-                      return value.isEnable == 1 && <TranslationWrapper key={key} identifier={`settings.${value.id}`} wrapper={"option"} wrapperProps={{ value: value.id }}>
-                        {value.itemName}
-                      </TranslationWrapper>
-                      // return (
-                      //   value.isEnable == 1 && <option
-                      //     value={value.id}
-                      //     key={key}
-                      //   >
-                      //     {value.itemName}: <Translation identifier={`settings.${value.id}`}>{value.itemName}</Translation>
-                      //   </option>
-                      // )
+                      return (
+                        value.isEnable == 1 && <option
+                          value={value.id}
+                          key={key}
+                        >
+                          {value.itemName}
+                        </option>
+                      )
                     })
                   }
                 </Field>
@@ -193,9 +188,12 @@ class Page2 extends Component {
                   {
                     isModelValue.map((value, key) => {
                       return (
-                        value.isEnable == 1 && <TranslationWrapper key={key} identifier={`settings.${value.id}`} wrapper={"option"} wrapperProps={{ value: value.id }}>
+                        value.isEnable == 1 && <option
+                          value={value.id}
+                          key={key}
+                        >
                           {value.itemName}
-                        </TranslationWrapper>
+                        </option>
                       )
                     })
                   }
@@ -248,9 +246,9 @@ class Page2 extends Component {
                   {
                     odometer.map((value, key) => {
                       return (
-                        value.isEnable == 1 && <TranslationWrapper key={key} identifier={`settings.${value.id}`} wrapper={"option"} wrapperProps={{ value: value.id }}>
+                        value.isEnable == 1 && <option value={value.id} key={key}>
                           {value.itemName}
-                        </TranslationWrapper>
+                        </option>
                       )
                     })
                   }

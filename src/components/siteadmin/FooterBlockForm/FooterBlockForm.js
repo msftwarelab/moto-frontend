@@ -22,7 +22,6 @@ import cs from '../../../components/commonStyle.css';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../locale/messages';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class FooterBlockForm extends Component {
 
@@ -49,9 +48,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.adminTitleLabel} /> 1</label>
-                    <AdminTranslateButton label={formatMessage(messages.adminTitleLabel)} identifier={`footer.title1`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
                       name="title1"
@@ -66,9 +63,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.contentLabel} /> 1</label>
-                    <AdminTranslateButton label={formatMessage(messages.contentLabel)} identifier={`footer.content1`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
                       name="content1"
@@ -82,9 +77,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.adminTitleLabel} /> 2</label>
-                    <AdminTranslateButton label={formatMessage(messages.adminTitleLabel)} identifier={`footer.title2`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
                       name="title2"
@@ -99,9 +92,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.contentLabel} /> 2</label>
-                    <AdminTranslateButton label={formatMessage(messages.contentLabel)} identifier={`footer.content2`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12} >
                     <Field
                       name="content2"
@@ -115,9 +106,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.adminTitleLabel} /> 3</label>
-                    <AdminTranslateButton label={formatMessage(messages.adminTitleLabel)} identifier={`footer.title3`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
                       name="title3"
@@ -132,9 +121,7 @@ class FooterBlockForm extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew} ><FormattedMessage {...messages.contentLabel} /> 3</label>
-                    <AdminTranslateButton label={formatMessage(messages.contentLabel)} identifier={`footer.content3`} />
                   </Col>
-                  
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
                       name="content3"

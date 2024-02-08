@@ -160,6 +160,19 @@ class ConfigSettingsForm extends React.Component {
                   </Field>
                 </FormGroup>
               </div>
+
+              <hr className={s.divider} />
+              <h5 className={cx(s.headingMobile, 'headingMobileRTL')}>{formatMessage(messages.opnPaymentsSettings)}</h5>
+
+              <div className={s.girdOne}>
+                <FormGroup className={s.space3}>
+                  <ControlLabel className={cp.labelTextNew}>
+                    <FormattedMessage {...messages.opnPaymentsPublicKey} />
+                  </ControlLabel>
+                  <Field name="opnPaymentsPublicKey" type="text" component={CommonFormComponent} label={formatMessage(messages.opnPaymentsPublicKey)} inputClass={cx(cp.formControlInput)} />
+                </FormGroup>
+              </div>
+
               {/* <hr className={s.divider} />
               <h5 className={cx(s.headingMobile, 'headingMobileRTL')}>{formatMessage(messages.facebookSettings)}</h5>
               <div className={s.girdOne}>

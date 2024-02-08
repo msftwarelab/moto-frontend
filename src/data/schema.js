@@ -362,12 +362,6 @@ import deleteWhyHostReview from './mutations/SiteAdmin/WhyHostReview/deleteWhyHo
 import updateWhyHostReview from './mutations/SiteAdmin/WhyHostReview/updateWhyHostReview';
 import getHomeWhyHostReview from './queries/siteadmin/WhyHostReview/getHomeWhyHostReview';
 import UpdateClaimPayout from './mutations/SiteAdmin/updateClaimPayout';
-import getTranslation, { getTranslations } from './queries/getTranslation';
-import updateTranslations from './mutations/Translation/updateTranslations';
-
-import GetCompany from './queries/Documents/GetCompany';
-import GetCompanies from './queries/Documents/GetCompanies';
-import CreateCompany from './mutations/Company/CreateCompany';
 
 const schema = new Schema({
   query: new ObjectType({
@@ -519,11 +513,7 @@ const schema = new Schema({
       getWhyHostAllReviews,
       getWhyHostReview,
       getHomeWhyHostReview,
-      getUserExists,
-      getTranslation,
-      getTranslations,
-      GetCompany,
-      GetCompanies
+      getUserExists
     },
   }),
   mutation: new ObjectType({
@@ -625,9 +615,7 @@ const schema = new Schema({
       updateWhyHost,
       deleteWhyHostReview,
       updateWhyHostReview,
-      UpdateClaimPayout,
-      updateTranslations,
-      CreateCompany
+      UpdateClaimPayout
     }
   })
 });

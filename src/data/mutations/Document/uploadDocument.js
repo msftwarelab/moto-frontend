@@ -1,70 +1,61 @@
 // GrpahQL
 import {
-  GraphQLList as List,
-  GraphQLString as StringType,
-  GraphQLInt as IntType,
-  GraphQLNonNull as NonNull,
-} from 'graphql';
+    GraphQLList as List,
+    GraphQLString as StringType,
+    GraphQLInt as IntType,
+    GraphQLNonNull as NonNull,
+  } from 'graphql';
+  
+  import DocumentVerificationType from '../../types/DocumentVerification';
+  
+  // Sequelize models
+ // import { Threads, ThreadItems } from '../../../data/models';
 
-import DocumentVerificationType from '../../types/DocumentVerification';
-
-// Sequelize models
-// import { Threads, ThreadItems } from '../../../data/models';
-
-import { DocumentVerification } from '../../../data/models';
-
-const uploadDocument = {
-
-  type: DocumentVerificationType,
-
-  args: {
-
-    fileName: { type: StringType },
-    fileType: { type: StringType },
-    mark: { type: StringType },
-
-  },
-
-  async resolve({ request, response }, {
-
-    fileName,
-    fileType,
-    mark
-  }) {
-    console.log(`\n\n\n\nUPLOAD\n\n\n\n\n, `, {
+  import { DocumentVerification } from '../../../data/models';
+  
+  const uploadDocument = {
+  
+    type: DocumentVerificationType,
+  
+    args: {
+        
+        fileName: { type: StringType },
+        fileType: { type: StringType },
+        
+    },
+  
+    async resolve({ request, response }, {
+     
       fileName,
-      fileType,
-      document_mark: mark,
-      userId: request.user.id
-    })
+      fileType
+    }) {
 
-    if (request.user && !request.user.admin) {
+
+ if(request.user && !request.user.admin) {
       const uploadDocuments = await DocumentVerification.create({
         fileName,
         fileType,
-        document_mark: mark,
         userId: request.user.id
       });
-
-      if (uploadDocuments) {
+      if(uploadDocuments){
         return {
-          status: 'success'
-        }
-      } else {
+            status: 'success'
+          }
+      }else{
         return {
-          status: 'failed'
-        }
+            status: 'failed'
+          }
       }
-    } else {
-      return {
-        status: "notLoggedIn",
-      };
+    }else{
+        return {
+            status: "notLoggedIn",
+          };
     }
-  },
-};
-
-export default uploadDocument;
-
+    },
+  };
+  
+  export default uploadDocument;
+  
 /*
 
 
@@ -85,33 +76,34 @@ mutation uploadDocument(
  
 */
 
-/**
-mutation CreateThreadItems(
-  $listId: Int!, 
-  $host: String!,
-  $content: String!,
-  $type: String,
-  $startDate: String,
-  $endDate: String,
-  $personCapacity: Int
-){
-    CreateThreadItems(
-      listId: $listId,
-      host: $host,
-      content: $content,
-      type: $type,
-      startDate: $startDate,
-      endDate: $endDate,
-      personCapacity: $personCapacity
-    ) {
-        id
-        sentBy
-        content
-        type
-        startDate
-        endDate
-        personCapacity
-        createdAt
-    }
-}
-**/
+  /**
+  mutation CreateThreadItems(
+    $listId: Int!, 
+    $host: String!,
+    $content: String!,
+    $type: String,
+    $startDate: String,
+    $endDate: String,
+    $personCapacity: Int
+  ){
+      CreateThreadItems(
+        listId: $listId,
+        host: $host,
+        content: $content,
+        type: $type,
+        startDate: $startDate,
+        endDate: $endDate,
+        personCapacity: $personCapacity
+      ) {
+          id
+          sentBy
+          content
+          type
+          startDate
+          endDate
+          personCapacity
+          createdAt
+      }
+  }
+  **/  
+  

@@ -42,7 +42,9 @@ const validate = values => {
     errors.phoneNumber = messages.phoneNumberLengthInvalid;
   }
 
-  if (!values.address || values.address.toString().trim() === '') errors.address = messages.required;
+  if (!values.address) {
+    errors.address = messages.required && messages.required;
+  }
 
   if (!values.androidVersion || values.androidVersion.toString().trim() === '') {
     errors.androidVersion = messages.required;

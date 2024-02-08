@@ -119,17 +119,17 @@ const autoClaimPayoutToHost = app => {
 
             if (getPayout && getPayout.payEmail && checkUserStatus && amount > 0) {
 
-              if (getPayout.methodId === 1) {
-                paymentStatus = await paypalclaimPayout(item.id, checkUserStatus.email, amount, base.symbol, payoutId, item.hostId, item.claimPaymentAttempt)
-                status = paymentStatus['status']
-                errorMessage = paymentStatus['errorMessage']
+              // if (getPayout.methodId === 1) {
+              //   paymentStatus = await paypalclaimPayout(item.id, checkUserStatus.email, amount, base.symbol, payoutId, item.hostId, item.claimPaymentAttempt)
+              //   status = paymentStatus['status']
+              //   errorMessage = paymentStatus['errorMessage']
 
-              } else if (getPayout.methodId === 2) {
+              // } else if (getPayout.methodId === 2) {
 
-                paymentStatus = await stripeClaimPayout(item.id, getPayout.payEmail, amount, base.symbol, checkUserStatus.email, payoutId, item.hostId, item.claimPaymentAttempt)
-                status = paymentStatus['status']
-                errorMessage = paymentStatus['errorMessage']
-              }
+              //   paymentStatus = await stripeClaimPayout(item.id, getPayout.payEmail, amount, base.symbol, checkUserStatus.email, payoutId, item.hostId, item.claimPaymentAttempt)
+              //   status = paymentStatus['status']
+              //   errorMessage = paymentStatus['errorMessage']
+              // }
 
               if (status == 400) {
                 let updateFailed;

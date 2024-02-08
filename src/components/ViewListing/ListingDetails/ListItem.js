@@ -17,8 +17,6 @@ import * as FontAwesome from 'react-icons/lib/fa';
 
 //Images
 import arrowIcon from '/public/SiteIcons/listArrowLeft.svg';
-import Translation from '../../Translation/Translation';
-import { identifier } from '@babel/types';
 
 class ListItem extends React.Component {
   static propTypes = {
@@ -77,19 +75,14 @@ class ListItem extends React.Component {
           firstArray.map((item, key) => {
             if (item?.listsettings?.isEnable === "1") {
               return (
-                <div className={className} key={key}>
+                <div className={className}>
                   <p
+                    key={key}
                     className={cx(cs.commonContentText, s.displayFlex, cs.paddingTop3)}
                   >
                     <img src={arrowIcon} className={cx(s.streeingImage, 'commonIconSpace')} />
                     <span>
-                      {item && item?.listsettings && item?.listsettings?.itemName && (
-                        item?.houseRulesId
-                          ? <Translation identifier={`settings.${item?.houseRulesId}`}>
-                            {item?.listsettings?.itemName}
-                          </Translation>
-                          : item?.listsettings?.itemName
-                      )}
+                      {item && item?.listsettings && item?.listsettings?.itemName}
                     </span>
                   </p>
                 </div>

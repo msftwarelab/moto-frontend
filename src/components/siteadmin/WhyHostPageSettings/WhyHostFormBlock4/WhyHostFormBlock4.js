@@ -20,7 +20,6 @@ import messages from '../../../../locale/messages';
 import submit from './submit';
 import validate from './validate';
 import CommonFormComponent from '../../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 class WhyHostFormBlock4 extends Component {
 
   render() {
@@ -36,7 +35,6 @@ class WhyHostFormBlock4 extends Component {
               {error && <strong>{formatMessage(error)}</strong>}
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.easyHostTitle} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock4easyHostTitle1" label={`${formatMessage(messages.easyHostTitle)} 1`} />
                 <Field
                   name="easyHostTitle1"
                   type="text"
@@ -46,7 +44,6 @@ class WhyHostFormBlock4 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock4easyHostContent1" label={`${formatMessage(messages.workTitleLabel)} 1`} />
                 <Field
                   name="easyHostContent1"
                   component={CommonFormComponent}
@@ -55,7 +52,6 @@ class WhyHostFormBlock4 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleContentLabel} /> 1</label>
-                <AdminTranslateButton identifier="whyBlock4easyHostContent2" label={`${formatMessage(messages.workTitleContentLabel)} 1`} />
                 <Field
                   name="easyHostContent2"
                   component={CommonFormComponent}
@@ -70,7 +66,6 @@ class WhyHostFormBlock4 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock4workTitle1" label={`${formatMessage(messages.workTitleLabel)} 2`} />
                 <Field
                   name="workTitle1"
                   type="text"
@@ -80,7 +75,6 @@ class WhyHostFormBlock4 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleContentLabel} /> 2</label>
-                <AdminTranslateButton identifier="whyBlock4workContent1" label={`${formatMessage(messages.workTitleContentLabel)} 2`} />
                 <Field
                   name="workContent1"
                   component={CommonFormComponent}
@@ -95,7 +89,7 @@ class WhyHostFormBlock4 extends Component {
               </FormGroup>
               <FormGroup className={s.space3}>
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleLabel} /> 3</label>
-                <AdminTranslateButton identifier="whyBlock4workTitle2" label={`${formatMessage(messages.workTitleLabel)} 3`} />
+
                 <Field
                   name="workTitle2"
                   type="text"
@@ -107,7 +101,7 @@ class WhyHostFormBlock4 extends Component {
               <FormGroup className={s.space3}>
 
                 <label className={cs.labelTextNew} ><FormattedMessage {...messages.workTitleContentLabel} /> 3</label>
-                <AdminTranslateButton identifier="whyBlock4workContent2" label={`${formatMessage(messages.workTitleContentLabel)} 3`} />
+
                 <Field
                   name="workContent2"
                   component={CommonFormComponent}

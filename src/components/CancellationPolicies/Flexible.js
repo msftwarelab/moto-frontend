@@ -12,7 +12,6 @@ import s from './CancellationPolicies.css';
 
 // Locale
 import messages from '../../locale/messages';
-import Translation from '../Translation/Translation';
 class Flexible extends React.Component {
 
   static propTypes = {
@@ -51,9 +50,9 @@ class Flexible extends React.Component {
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
               <FormattedMessage {...messages.theWord} />
-              {' '}<Translation identifier="siteName">{siteName}</Translation>{' '}
+              {' '}{siteName}{' '}
               <FormattedMessage {...messages.flexible2} />
-              {' '}<Translation identifier="siteName">{siteName}</Translation>{' '}
+              {' '}{siteName}{' '}
               <FormattedMessage {...messages.flexible3} />
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
@@ -61,11 +60,11 @@ class Flexible extends React.Component {
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
               <FormattedMessage {...messages.flexible5} />
-              {' '}<Translation identifier="siteName">{siteName}</Translation>{' '}
+              {' '}{siteName}{' '}
               <FormattedMessage {...messages.flexible6} />
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
-              <Translation identifier="siteName">{siteName}</Translation>{' '}
+              {siteName}{' '}
               <FormattedMessage {...messages.flexible7} />
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
@@ -73,7 +72,7 @@ class Flexible extends React.Component {
             </li>
             <li className={cx(s.commonContentText, s.spaceBottom3)}>
               <FormattedMessage {...messages.flexible9} />
-              {' '}<Translation identifier="siteName">{siteName}</Translation>{' '}
+              {' '}{siteName}{' '}
               <FormattedMessage {...messages.flexible10} />
             </li>
             <li className={cx(s.commonContentText)}>

@@ -62,7 +62,9 @@ const UpdateSiteSettingsType = new ObjectType({
     errorMessage: { type: StringType },
     appForceUpdate: { type: StringType },
     androidVersion: { type: StringType },
-    iosVersion: { type: StringType }
+    iosVersion: { type: StringType },
+
+    opnPaymentsPublicKey: { type: StringType }
   },
 });
 

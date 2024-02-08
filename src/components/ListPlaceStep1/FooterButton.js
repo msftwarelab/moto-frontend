@@ -46,11 +46,9 @@ class FooterButton extends Component {
 						isBlocking={isBlocking}
 					/>
 					<div className={cx(s.nextBackButton, 'btnSmallMb')}>
-						{
-							previousPage && (<Button className={cx(s.btnPrimaryBorder, 'backBtnRTL')} onClick={() => previousPage(previousPagePath)}>
-								<FormattedMessage {...messages.back} />
-							</Button>)
-						}
+						<Button className={cx(s.btnPrimaryBorder, 'backBtnRTL')} onClick={() => previousPage(previousPagePath)}>
+							<FormattedMessage {...messages.back} />
+						</Button>
 
 						{!type && <Button className={cx(s.btnPrimary)} disabled={isDisabled} onClick={() => nextPage(nextPagePath)}>
 							{skipLabel ? (isAvailable ? <FormattedMessage {...messages.next} /> : <FormattedMessage {...messages.skip} />) : <FormattedMessage {...messages.next} />}
@@ -70,7 +68,7 @@ class FooterButton extends Component {
 									className={cx(s.btnPrimary, 'arButtonLoader')}
 									handleClick={() => updateListingMap()}
 								/>
-							</div>	
+							</div>
 						}
 						{
 							type && type != 'submit' && !isExistingList && <div className={s.displayInlineBlock}>

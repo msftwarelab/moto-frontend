@@ -20,7 +20,6 @@ import messages from '../../../../locale/messages';
 import submit from './submit';
 import validate from './validate';
 import CommonFormComponent from '../../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 class WhyHostFormBlock1 extends Component {
 
 
@@ -52,7 +51,6 @@ class WhyHostFormBlock1 extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew}><FormattedMessage {...messages.hostBannerTitle} /></label>
-                    <AdminTranslateButton label={formatMessage(messages.hostBannerTitle)} identifier="hostBannerTitle1" />
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
@@ -68,7 +66,6 @@ class WhyHostFormBlock1 extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew}><FormattedMessage {...messages.hostBannerContent} /></label>
-                    <AdminTranslateButton label={formatMessage(messages.hostBannerContent)} identifier="hostBannerContent1" />
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field
@@ -83,7 +80,6 @@ class WhyHostFormBlock1 extends Component {
                 <Row>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <label className={cs.labelTextNew}><FormattedMessage {...messages.contentLabel} /></label>
-                    <AdminTranslateButton label={formatMessage(messages.contentLabel)} identifier="hostBannerContent2" />
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={12}>
                     <Field

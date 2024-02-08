@@ -32,8 +32,6 @@ import calendarIcon from '/public/SiteIcons/calendarIcon.svg';
 import speedometerIcon from '/public/SiteIcons/speedometerIcon.svg';
 import makeIcon from '/public/SiteIcons/makeIcon.svg';
 import transmissionIcon from '/public/SiteIcons/transmissionIcon.svg';
-import Translation from '../../Translation/Translation';
-import { identifier } from '@babel/types';
 
 class ListingIntro extends React.Component {
   static propTypes = {
@@ -83,9 +81,7 @@ class ListingIntro extends React.Component {
           <div className={cx(s.gridBoxSection, cs.spaceBottom4, 'viewListingGridBoxRTL')}>
             <img src={carTypeIcon} className={cs.spaceBottom3} />
             <h4 className={cx(cs.commonContentText, cs.fontWeightBold, cs.paddingBottom1)}>{formatMessage(messages.carType)}</h4>
-            <h5 className={cx(cs.commonMediumText, cs.fontWeightNormal, s.textSection)}>
-              <Translation identifier={`settings.${data?.settingsData[0]?.listsettings?.id}`}>{data?.settingsData[0]?.listsettings?.itemName}</Translation>
-            </h5>
+            <h5 className={cx(cs.commonMediumText, cs.fontWeightNormal, s.textSection)}>{data?.settingsData[0]?.listsettings?.itemName}</h5>
           </div>
           <div className={cx(s.gridBoxSection, cs.spaceBottom4, 'viewListingGridBoxRTL')}>
             <img src={makeIcon} className={cs.spaceBottom3} />

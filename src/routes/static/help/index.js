@@ -2,24 +2,47 @@ import React from 'react';
 import Layout from '../../../components/Layout';
 import Page from '../../../components/Page';
 import fetch from '../../../core/fetch';
-import { fetchData } from '../fetchData';
 
+const query = `query getEditStaticPage ($id: Int!) {
+  getEditStaticPage (id: $id) {
+      id
+      pageName
+      content
+      metaTitle
+      metaDescription
+      createdAt
+  }
+}`;
 
-export default async function action({ locale }) {
+export default async function action() {
   const dataResult = await new Promise((resolve) => {
     require.ensure([], (require) => {
       resolve(require('./help.md'));
     }, 'help');
   });
-  const data = await fetchData({ id: 5, locale });
 
-  if (data) {
+  const resp = await fetch('/graphql', {
+    method: 'post',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: { id: 5 },
+    }),
+    credentials: 'include',
+  });
+
+  const { data } = await resp.json();
+
+  if (data && data.getEditStaticPage) {
 
     return {
-      title: data.title,
-      description: data.description,
+      title: data.getEditStaticPage.metaTitle,
+      description: data.getEditStaticPage.metaDescription,
       chunk: 'help',
-      component: <Layout><Page html={data.html} title={data.title} /></Layout>,
+      component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.metaTitle} /></Layout>,
     };
 
   } else {

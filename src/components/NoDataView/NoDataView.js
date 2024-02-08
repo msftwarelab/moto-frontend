@@ -3,7 +3,6 @@ import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './NoDataView.css';
 import cs from '../../components/commonStyle.css'
-import Translation from '../Translation/Translation';
 class NoDataView extends Component {
 
     render() {
@@ -17,7 +16,7 @@ class NoDataView extends Component {
                 </div>
                 <div className={cx(cs.marginInlineAuto, cs.spaceBottom5, s.commonWidth)}>
                     <p className={cx(cs.commonTotalText, cs.spaceBottom2, cs.fontWeightBold)}>{title}</p>
-                    <p className={cx(cs.commonMediumText, cs.fontWeightNormal)}><span><Translation identifier="siteTitle">{siteTitle}</Translation>{' '}</span>{content1} {content2}</p>
+                    <p className={cx(cs.commonMediumText, cs.fontWeightNormal)}><span>{siteTitle}{' '}</span>{content1} {content2}</p>
                 </div>
             </div>
         );

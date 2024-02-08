@@ -15352,45 +15352,27 @@
     ]
   },
   {
-    "id": "app.userType",
-    "description": "Are you a company?",
-    "defaultMessage": "Are you a company?",
+    "id": "app.opnPayments",
+    "description": "opnPayments",
+    "defaultMessage": "OpnPayments",
     "message": "",
     "files": [
       "src/locale/messages.js"
     ]
   },
   {
-    "id": "app.userTypeCompany",
-    "description": "Company",
-    "defaultMessage": "Company",
+    "id": "app.opnPaymentsPublicKey",
+    "description": "Enter your opnPayments public key",
+    "defaultMessage": "OpnPayments publishable key",
     "message": "",
     "files": [
       "src/locale/messages.js"
     ]
   },
   {
-    "id": "app.userTypeIndividual",
-    "description": "Individual",
-    "defaultMessage": "Individual",
-    "message": "",
-    "files": [
-      "src/locale/messages.js"
-    ]
-  },
-  {
-    "id": "app.companyFullAddress",
-    "description": "Company Full Address",
-    "defaultMessage": "Company Full Address",
-    "message": "",
-    "files": [
-      "src/locale/messages.js"
-    ]
-  },
-  {
-    "id": "app.fullCompanyName",
-    "description": "fullCompanyName",
-    "defaultMessage": "Full Company name",
+    "id": "app.opnPaymentsSettings",
+    "description": "Here you can setup opnPayments",
+    "defaultMessage": "OpnPayments account settings",
     "message": "",
     "files": [
       "src/locale/messages.js"

@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const localeDict = {
+const localeDict = {
     'en-US': 'English',
     'es': 'Español',
     'it-IT': 'Italiano',
@@ -8,21 +8,13 @@ export const localeDict = {
     'pt-PT': 'Português',
     'cs-CZ': 'Czech',
     'ar': 'العربية',
-    'zh-CN': 'Chinese',
-    'ms-MY': 'Malay',
-    'ko-KR': 'Korean',
-    'ja-JP': 'Japanese',
-    'hi-IN': 'Hindi',
-    'ru-RU': 'Russian',
-    'de-DE': 'German',
-    'th-TH': 'Thai',
 };
 
 
 const rtlLocateDict = ['he', 'ar'];
 
 export function formatLocale(locale) {
-    return localeDict[locale] || locale;
+    return localeDict[locale] || 'English';
 }
 
 export function isRTL(locale) {

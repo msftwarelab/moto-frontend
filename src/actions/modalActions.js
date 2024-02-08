@@ -1,60 +1,24 @@
 import {
-  CLOSE_ADMIN_TRANSLATE_MODAL,
-  CLOSE_FILTER_MODAL,
-  CLOSE_FORGOT_PASSWORD_MODAL,
-  CLOSE_HEADER_MODAL,
-  CLOSE_LONGIN_MODAL,
-  CLOSE_REPORT_USER_MODAL,
-  CLOSE_SIGNUP_MODAL,
-  CLOSE_SOCIAL_SHARE_MODAL,
-  CLOSE_THANK_YOU_MODAL,
-  CLOSE_TRANSACTION_FILTER_MODAL,
-  OPEN_ADMIN_TRANSLATE_MODAL,
-  OPEN_FILTER_MODAL,
-  OPEN_FORGOT_PASSWORD_MODAL,
-  OPEN_HEADER_MODAL,
   OPEN_LONGIN_MODAL,
-  OPEN_REPORT_USER_MODAL,
+  CLOSE_LONGIN_MODAL,
   OPEN_SIGNUP_MODAL,
-  OPEN_SOCIAL_SHARE_MODAL,
+  CLOSE_SIGNUP_MODAL,
+  OPEN_FORGOT_PASSWORD_MODAL,
+  CLOSE_FORGOT_PASSWORD_MODAL,
+  OPEN_REPORT_USER_MODAL,
+  CLOSE_REPORT_USER_MODAL,
   OPEN_THANK_YOU_MODAL,
-  OPEN_TRANSACTION_FILTER_MODAL
+  CLOSE_THANK_YOU_MODAL,
+  OPEN_SOCIAL_SHARE_MODAL,
+  CLOSE_SOCIAL_SHARE_MODAL,
+  OPEN_HEADER_MODAL,
+  CLOSE_HEADER_MODAL,
+  OPEN_FILTER_MODAL,
+  CLOSE_FILTER_MODAL,
+  OPEN_TRANSACTION_FILTER_MODAL,
+  CLOSE_TRANSACTION_FILTER_MODAL
 } from '../constants';
 import { toggleClose } from './Menu/toggleControl';
-
-export function openAdminTranslateModal(identifier, label, type = "default") {
-
-  return (dispatch, getState) => {
-    dispatch({
-      type: OPEN_ADMIN_TRANSLATE_MODAL,
-      payload: {
-        isAdminTranslateModalOpen: true,
-        identifier,
-        label,
-        type
-      }
-    });
-    dispatch(toggleClose());
-  };
-
-}
-
-export function closeAdminTranslateModal() {
-
-  return (dispatch, getState) => {
-    dispatch({
-      type: CLOSE_ADMIN_TRANSLATE_MODAL,
-      payload: {
-        isAdminTranslateModalOpen: false,
-        identifier: undefined,
-        label: undefined,
-        type: undefined
-      }
-    });
-    dispatch(toggleClose());
-  };
-
-}
 
 export function openLoginModal() {
 

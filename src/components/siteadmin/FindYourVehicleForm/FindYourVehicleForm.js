@@ -23,7 +23,6 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../locale/messages';
 import { url } from '../../../config';
 import CommonFormComponent from '../../CommonField/CommonFormComponent';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 
 class FindYourVehicleForm extends Component {
 
@@ -116,14 +115,12 @@ class FindYourVehicleForm extends Component {
                   </Col>
                   <Col lg={6} md={6} sm={12} xs={12} className={s.mobileTop}>
                     <label className={cx(cs.labelTextNew)}><FormattedMessage {...messages.headingLabel} /></label>
-                    <AdminTranslateButton identifier="findyourcar.heading" label={formatMessage(messages.headingLabel)} />
                     <Field
                       name="heading"
                       component={CommonFormComponent}
                       inputClass={cx(cs.formControlInput)}
                     />
                     <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.buttonLabel} /></label>
-                    <AdminTranslateButton identifier="findyourcar.buttonLabel" label={formatMessage(messages.buttonLabel)} />
                     <Field
                       name="buttonLabel"
                       component={CommonFormComponent}
@@ -137,22 +134,20 @@ class FindYourVehicleForm extends Component {
                       suffixLabel={url}
                       inputClass={cx(cs.formControlInput, s.addonInputRadius)}
                     />
-                    <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#1</label>
-                    <AdminTranslateButton identifier="findyourcar.content1" label={formatMessage(messages.buttonLink)} />
+                      <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#1</label>
                     <Field
                       name="content1"
                       component={CommonFormComponent}
                       componentClass={'textarea'}
                     />
                     <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#2</label>
-                    <AdminTranslateButton identifier="findyourcar.content2" label={formatMessage(messages.buttonLink)} />
                     <Field
                       name="content2"
                       component={CommonFormComponent}
                       componentClass={'textarea'}
                     />
                     <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#3</label>
-                    <AdminTranslateButton identifier="findyourcar.content3" label={formatMessage(messages.buttonLink)} />
+
                     <Field
                       name="content3"
                       component={CommonFormComponent}
@@ -163,7 +158,7 @@ class FindYourVehicleForm extends Component {
                       addMore.includes('4') && <>
 
                         <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#4</label>
-                        <AdminTranslateButton identifier="findyourcar.content4" label={formatMessage(messages.buttonLink)} />
+
                         <Field
                           name="content4"
                           component={CommonFormComponent}
@@ -174,7 +169,6 @@ class FindYourVehicleForm extends Component {
                     {
                       addMore.includes('5') && <>
                         <label className={cx(cs.labelTextNew, cs.spaceTop3)} ><FormattedMessage {...messages.contentLabel} />#5</label>
-                        <AdminTranslateButton identifier="findyourcar.content5" label={formatMessage(messages.buttonLink)} />
                         <Field
                           name="content5"
                           component={CommonFormComponent}

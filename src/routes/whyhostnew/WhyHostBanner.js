@@ -25,7 +25,6 @@ import {
 //Image
 import icon from '/public/SiteIcons/becomeaHostIcon.svg';
 import learnIcon from '/public/SiteIcons/learnIcon.png';
-import Translation from '../../components/Translation/Translation';
 
 // Or Access Link,Element,etc as follows
 let Link = Scroll.Link;
@@ -52,12 +51,12 @@ class WhyHostBanner extends Component {
                 <div className={cx(s.Banner, cs.dFlex, s.noflex)} style={{ backgroundImage: `url(/images/home/${data && data.hostBannerImage1})` }}>
                     <Row className={cx(cs.dFlex, s.noflex, s.minWidthBanner)}>
                         <Col lg={6} md={7} sm={12} xs={12}>
-                            <div className={s.tip}>{data && <Translation identifier="hostBannerContent2">{data.hostBannerContent2}</Translation>}</div>
+                            <div className={s.tip}>{data && data.hostBannerContent2}</div>
                             <h1 className={s.mainText}>
-                                {data && <Translation identifier="hostBannerTitle1">{data.hostBannerTitle1}</Translation>}
+                                {data && data.hostBannerTitle1}
                             </h1>
                             <p className={s.listText}>
-                                {data && <Translation identifier="hostBannerContent1">{data.hostBannerContent1}</Translation>}
+                                {data && data.hostBannerContent1}
                             </p>
                             <div className={cx(cs.dFlex, s.noflex, s.noWrapFlex, cs.spaceBottom4)}>
                                 <Button

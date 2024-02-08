@@ -62,5 +62,5 @@ export default compose(
     options: {
       ssr: false
     }
-  })
+  }),
 )(HomeBanner);

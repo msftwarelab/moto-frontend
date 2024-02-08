@@ -29,7 +29,6 @@ import whiteFooter from '/public/siteImages/whiteFooterWave.svg';
 import messages from '../../locale/messages';
 
 import getEnabledBlog from './getEnabledBlog.graphql';
-import Translation from '../Translation/Translation';
 
 class Footer extends React.Component {
 
@@ -88,7 +87,7 @@ class Footer extends React.Component {
               <Col sm={12} md={12} lg={12} xs={12}>
                 <div className={s.displayGrid}>
                   <div className={cs.spaceTop3}>
-                    <label className={cx(cs.commonMediumText, cs.paddingBottom2, cs.fontWeightBold)}><Translation identifier="siteName">{siteName}</Translation></label>
+                    <label className={cx(cs.commonMediumText, cs.paddingBottom2, cs.fontWeightBold)}>{siteName}</label>
                     <ul className={s.listContainer}>
                       <li>
                         <Link to={'/about'} className={cx(cs.siteTextColor, cs.commonMediumText)} >

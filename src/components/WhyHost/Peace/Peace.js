@@ -12,7 +12,6 @@ import { isRTL } from '../../../helpers/formatLocale';
 //Image
 import nextIcon from '/public/SiteIcons/sliderNextArrow.svg';
 import prevIcon from '/public/SiteIcons/sliderPrevArrow.svg';
-import Translation from '../../Translation/Translation';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -119,7 +118,7 @@ class Peace extends Component {
       <div className={s.easyImage}>
         <div className={s.container}>
           <h3 className={cx(s.heading)}>
-            {data && <Translation identifier="whyBlock6peaceTitleHeading">{data.peaceTitleHeading}</Translation>}
+            {data && data.peaceTitleHeading}
           </h3>
 
           {load && <div><Swiper {...params} rtl={isRTL(locale)} ref={node => this.swiper = node !== null ? node.swiper : null}>
@@ -130,16 +129,11 @@ class Peace extends Component {
                   <div className={cx(cs.dFlex, s.gap)}>
                     <img src={image} className={s.iconCss} />
                     <div>
-                      <div className={cx(cs.commonSubTitleText, cs.fontWeightBold)}>
-                        <Translation identifier={`whyBlock7userName.${review.id}`}>{review.userName}</Translation>
-                      </div>
-                      <div className={cx(cs.commonSmallText, s.grayText)}>
-                        <Translation identifier="siteName">{siteName}</Translation>
-                      </div>
+                      <div className={cx(cs.commonSubTitleText, cs.fontWeightBold)}>{review.userName}</div>
+                      <div className={cx(cs.commonSmallText, s.grayText)}>{siteName}</div>
                     </div>
                   </div>
-                  <p className={cx(cs.commonContentText, cs.spaceTop4)}>
-                    <Translation identifier={`whyBlock7reviewContent.${review.id}`}>{review.reviewContent}</Translation></p>
+                  <p className={cx(cs.commonContentText, cs.spaceTop4)}>{review.reviewContent}</p>
                 </div>
               )
             })

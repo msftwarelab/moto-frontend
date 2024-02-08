@@ -15,7 +15,6 @@ import {
 //Image
 import icon from '/public/SiteIcons/becomeaHostIcon.svg';
 import shareIcon from '/public/SiteIcons/shareLoveIcon.png'
-import Translation from '../../Translation/Translation';
 
 
 
@@ -32,8 +31,8 @@ class SharingSection extends Component {
     return (
       <div className={s.easyImage}>
         <div className={s.container}>
-          <h2 className={s.heading}> {data && <Translation identifier="whyBlock6peaceTitle3">{data.peaceTitle3}</Translation>} <img src={shareIcon} className={s.shareIconCss}/></h2>
-          <h3 className={s.desc}>{data && <Translation identifier="whyBlock6peaceContent3">{data.peaceContent3}</Translation>}</h3>
+        <h2 className={s.heading}> {data && data.peaceTitle3} <img src={shareIcon} className={s.shareIconCss}/></h2>
+              <h3 className={s.desc}>{data && data.peaceContent3}</h3>
               {
                 !isAuthenticated && <div className={s.flexCenter}><Button
                   className={cx(cs.btnPrimary, s.btnCss, cs.dFlex)}

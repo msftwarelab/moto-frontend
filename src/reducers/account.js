@@ -9,7 +9,6 @@ import {
   REMOVE_PROFILE_PICTURE_ERROR,
   GET_ADMIN_USER_START,
   GET_ADMIN_USER_SUCCESS,
-  GET_USER_COMPANY
 } from '../constants';
 
 export default function account(state = {}, action) {
@@ -64,12 +63,6 @@ export default function account(state = {}, action) {
         data: action.payload.userData,
         privileges: action.payload.adminPrivileges
       };
-    
-    case GET_USER_COMPANY:
-      return {
-        ...state,
-        company: action.payload
-      }
 
     default:
       return state;

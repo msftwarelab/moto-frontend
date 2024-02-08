@@ -28,7 +28,6 @@ import CommonFormComponent from '../../CommonField/CommonFormComponent';
 // Translation
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../locale/messages';
-import AdminTranslateButton from '../../AdminTranslateButton/AdminTranslateButton';
 class SiteSettingsForm extends Component {
 
   static propTypes = {
@@ -119,7 +118,6 @@ class SiteSettingsForm extends Component {
                       <ControlLabel className={cx(cp.adminLableTextNew, s.marginTop0, s.marginBottom9)}>
                         <FormattedMessage {...messages.siteName} />
                       </ControlLabel>
-                      <AdminTranslateButton label={messages.siteName.defaultMessage} identifier="siteName" />
                       <Field name="siteName" type="text" component={CommonFormComponent} label={formatMessage(messages.siteName)} maxlength={15} placeholder={formatMessage(messages.siteName)} inputClass={cx(cp.adminFormControlInput)} />
                     </FormGroup>
                   </Col>
@@ -128,7 +126,6 @@ class SiteSettingsForm extends Component {
                       <ControlLabel className={cx(cp.adminLableTextNew, s.marginTop0, s.marginBottom9)}>
                         <FormattedMessage {...messages.siteTitle} />
                       </ControlLabel>
-                      <AdminTranslateButton label={messages.siteTitle.defaultMessage} identifier="siteTitle" />
                       <Field name="siteTitle" type="text" component={CommonFormComponent} label={formatMessage(messages.siteTitle)} placeholder={formatMessage(messages.siteTitle)} inputClass={cx(cp.adminFormControlInput)} />
                     </FormGroup>
                   </Col>
@@ -138,7 +135,6 @@ class SiteSettingsForm extends Component {
                       <ControlLabel className={cx(cp.adminLableTextNew, s.marginTop0, s.marginBottom9)}>
                         <FormattedMessage {...messages.metaKeywordLabel} />
                       </ControlLabel>
-                      <AdminTranslateButton label={messages.metaKeywordLabel.defaultMessage} identifier="metaKeyword" textarea />
                       <Field name="metaKeyword" type="text" componentClass={"textarea"} component={CommonFormComponent} label={formatMessage(messages.metaKeywordLabel)} placeholder={formatMessage(messages.metaKeywordLabel)} />
                     </FormGroup>
                   </Col>
@@ -147,7 +143,6 @@ class SiteSettingsForm extends Component {
                       <ControlLabel className={cx(cp.adminLableTextNew, s.marginTop0, s.marginBottom9)}>
                         <FormattedMessage {...messages.metaKeywordLabelDesc} />
                       </ControlLabel>
-                      <AdminTranslateButton label={messages.metaKeywordLabelDesc.defaultMessage} identifier="metaDescription" textarea />
                       <Field name="metaDescription" type="text" componentClass={"textarea"} component={CommonFormComponent} label={formatMessage(messages.metaKeywordLabelDesc)} placeholder={formatMessage(messages.metaKeywordLabelDesc)} />
                     </FormGroup>
                   </Col>
@@ -317,14 +312,6 @@ class SiteSettingsForm extends Component {
                         <FormattedMessage {...messages.mobileNumberLabel} />
                       </ControlLabel>
                       <Field name="phoneNumber" type="text" component={CommonFormComponent} label={formatMessage(messages.mobileNumberLabel)} placeholder={formatMessage(messages.mobileNumberLabel)} inputClass={cx(cp.adminFormControlInput)} />
-                    </FormGroup>
-                  </Col>
-                  <Col xs={12} sm={12} md={12} lg={6}>
-                    <FormGroup className={cx(s.spaceTop3, cp.noMarginBottom)}>
-                      <ControlLabel className={cx(cp.adminLableTextNew, s.marginTop0, s.marginBottom9)}>
-                        <FormattedMessage {...messages.address} />
-                      </ControlLabel>
-                      <Field name="address"  component={CommonFormComponent} label={formatMessage(messages.address)} placeholder={formatMessage(messages.address)} inputClass={cx(cp.adminFormControlInput)}  componentClass={"textarea"}/>
                     </FormGroup>
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={12} className={cx(cp.textAlignRight, cp.spaceTop5, 'textAlignLeftRTL')}>

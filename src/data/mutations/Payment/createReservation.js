@@ -45,7 +45,9 @@ const createReservation = {
     lastName: { type: new NonNull(StringType) },
     dateOfBirth: { type: new NonNull(StringType) },
     countryCode: { type: StringType },
-    securityDeposit: { type: FloatType }
+    securityDeposit: { type: FloatType },
+    paymentMethod: {type: StringType},
+    token: {type: StringType},
   },
 
   async resolve({ request, response }, {

@@ -18,7 +18,6 @@ import CommonFormComponent from '../../../CommonField/CommonFormComponent';
 // Translation
 import { FormattedMessage, injectIntl } from 'react-intl';
 import messages from '../../../../locale/messages';
-import AdminTranslateButton from '../../../AdminTranslateButton/AdminTranslateButton';
 class WhyHostFormBlock2 extends Component {
 
 
@@ -38,7 +37,6 @@ class WhyHostFormBlock2 extends Component {
                   <Row>
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <label className={cs.labelTextNew} ><FormattedMessage {...messages.earnBlockTitle} /></label>
-                      <AdminTranslateButton identifier="earnBlockTitle1" label={formatMessage(messages.earnBlockTitle)} />
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <Field
@@ -54,7 +52,6 @@ class WhyHostFormBlock2 extends Component {
                   <Row>
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <label className={cs.labelTextNew} ><FormattedMessage {...messages.earnBlockContent} /> 1</label>
-                      <AdminTranslateButton identifier="earnBlockContent1" label={formatMessage(messages.earnBlockContent)} />
                     </Col>
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <Field

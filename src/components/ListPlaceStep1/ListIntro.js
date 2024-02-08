@@ -33,7 +33,6 @@ import Avatar from '../Avatar';
 import sayIcon from '/public/SiteIcons/sayIcon.png';
 import arrowIcon from '/public/SiteIcons/letGoIcon.svg';
 import footerImage from '/public/siteImages/onboardFooterImage.svg';
-import { TranslationWrapper } from '../Translation/Translation';
 
 class ListIntro extends Component {
 

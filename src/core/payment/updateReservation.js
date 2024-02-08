@@ -1,12 +1,13 @@
 import { Reservation } from '../../data/models';
 
-export async function updateReservation(id) {
+export async function updateReservation(id, paymentId) {
     const reservation = await Reservation.update({
         paymentState: 'completed',
        },
        {
           where: {
-            id
+            id,
+            paymentIntentId: paymentId
           }
        });
 

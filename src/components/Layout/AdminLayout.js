@@ -1,13 +1,13 @@
-import cx from 'classnames';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import PropTypes from 'prop-types';
 import React from 'react';
-import history from '../../core/history';
+import PropTypes from 'prop-types';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './AdminLayout.css';
+import cx from 'classnames';
 import AdminHeader from '../Header/AdminHeader';
 import AdminFooter from '../siteadmin/AdminFooter';
-import AdminTranslateModal from '../siteadmin/AdminTranslateModal/AdminTranslateModal';
 import SideBar from '../siteadmin/SideBar';
-import s from './AdminLayout.css';
+import history from '../../core/history';
+
 class AdminLayout extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -20,7 +20,6 @@ class AdminLayout extends React.Component {
     }
     return (
       <div className={cx('adminstyle')}>
-        <AdminTranslateModal />
         <div className={cx(s.adminLayout)}>
           <div>
             <SideBar location={location} />

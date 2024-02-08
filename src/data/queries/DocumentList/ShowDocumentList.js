@@ -19,23 +19,18 @@ const ShowDocumentList = {
   type: new List(DocumentVerificationType),
 
   args: {
-    mark: { type: StringType },
+    userId: { type: StringType },
   },
 
 
-  async resolve({ request, response }, { mark }) {
+  async resolve({ request, response }, { userId }) {
+
     if (request.user) {
       let userId = request.user.id;
-      const where = {
-        userId
-      };
-
-      if (mark) {
-        where.document_mark = mark
-      }
-
       return await DocumentVerification.findAll({
-        where
+        where: {
+          userId
+        }
       });
     }
   },
