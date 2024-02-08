@@ -1,0 +1,6 @@
+{
+    "name": "AdminTranslateModal",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./AdminTranslateModal.js"
+}

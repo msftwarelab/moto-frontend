@@ -1,0 +1,8 @@
+query ShowDocumentList($mark: String){
+  ShowDocumentList(mark: $mark){
+      id
+      userId,
+      fileName,
+      fileType
+  }
+}

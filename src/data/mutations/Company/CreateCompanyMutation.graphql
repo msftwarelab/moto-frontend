@@ -1,0 +1,12 @@
+mutation CreateCompany($name: String!, $email: String!, $phone: String!, $line: String, $address: String!, $isCompany: Boolean!) {
+    CreateCompany(name: $name, email: $email, phone: $phone, line: $line, address: $address, isCompany: $isCompany) {
+        id,
+        name,
+        email,
+        phone,
+        line,
+        address,
+        isCompany,
+        userId
+    }
+}

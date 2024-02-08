@@ -1,0 +1,6 @@
+query getTranslation($id: String!) {
+    getTranslation(id: $id) {
+        id
+        value
+    }
+}
